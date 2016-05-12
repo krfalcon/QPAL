@@ -30,7 +30,7 @@
     [guestButton addSubview:guestLogin];
     
     
-    
+
         UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(67.5 * self.scale, 470 *    self.scale, 240 * self.scale, 40 * self.scale)];
         [weChatButton setTag:1];
         [weChatButton setExclusiveTouch:YES];
@@ -40,7 +40,6 @@
         UIImageView *weChatLogin = [[UIImageView alloc] initWithFrame:weChatButton.bounds];
         [weChatLogin setImage:[UIImage imageNamed:@"btn-weixin"]];
         [weChatButton addSubview:weChatLogin];
-    
     
 }
 
@@ -57,7 +56,7 @@
             [_delegate guestLogin];
             break;
         }
-        /*
+        
         case 1:
             if ([WXApi isWXAppInstalled]) {
                 SendAuthReq *req = [[SendAuthReq alloc] init];
@@ -65,7 +64,7 @@
                 req.state = @"App";
                 [WXApi sendReq:req];
             }
-            break;*/
+            break;
             
         default:
             break;

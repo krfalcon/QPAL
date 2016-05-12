@@ -30,6 +30,9 @@
     [viewControllerContainer addSubview:qpViewController.view];
     
     currentViewController = qpViewController;
+    
+    
+    
 }
 
 - (void)pushViewControllerWithViewControllerType:(ViewControllerType)viewControllerType

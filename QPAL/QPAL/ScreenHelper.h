@@ -11,6 +11,7 @@
 
 #endif
 
+
 #define iPhone4 ([[UIScreen mainScreen] bounds].size.height == 480)
 #define iPhone5 ([[UIScreen mainScreen] bounds].size.height == 568)
 #define iPhone6 ([[UIScreen mainScreen] bounds].size.height == 667)

@@ -27,16 +27,62 @@
     
     
     //向微信注册
-    //[WXApi registerApp:@"wx5977fde560a391fd" withDescription:@"tencent"];
+    [WXApi registerApp:@"wx5977fde560a391fd" withDescription:@"weixin"];
     
     return YES;
 }
 
-/*
+
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [WXApi handleOpenURL:url delegate:self];
     return YES;
-}*/
+}
+
+- (void)onResp:(BaseResp *)resp {
+    // 向微信请求授权后,得到响应结果
+    if ([resp isKindOfClass:[SendAuthResp class]]) {
+        SendAuthResp *temp = (SendAuthResp *)resp;
+        
+        
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        
+        NSString *accessUrlStr = [NSString stringWithFormat:@"%@/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", WX_BASE_URL, WXPatient_App_ID, WXPatient_App_Secret, temp.code];
+        NSURL *URL = [NSURL URLWithString:accessUrlStr];
+        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+        
+        NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error);
+            } else {
+                NSLog(@"%@ %@", response, responseObject);
+            }
+        }];
+        [dataTask resume];
+        
+        /*
+        AFURLSessionManager *manager = [AFURLSessionManager manager];
+        NSString *accessUrlStr = [NSString stringWithFormat:@"%@/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", WX_BASE_URL, WXPatient_App_ID, WXPatient_App_Secret, temp.code];
+        [manager GET:accessUrlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"请求access的response = %@", responseObject);
+            NSDictionary *accessDict = [NSDictionary dictionaryWithDictionary:responseObject];
+            NSString *accessToken = [accessDict objectForKey:WX_ACCESS_TOKEN];
+            NSString *openID = [accessDict objectForKey:WX_OPEN_ID];
+            NSString *refreshToken = [accessDict objectForKey:WX_REFRESH_TOKEN];
+            // 本地持久化，以便access_token的使用、刷新或者持续
+            if (accessToken && ![accessToken isEqualToString:@""] && openID && ![openID isEqualToString:@""]) {
+                [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:WX_ACCESS_TOKEN];
+                [[NSUserDefaults standardUserDefaults] setObject:openID forKey:WX_OPEN_ID];
+                [[NSUserDefaults standardUserDefaults] setObject:refreshToken forKey:WX_REFRESH_TOKEN];
+                [[NSUserDefaults standardUserDefaults] synchronize]; // 命令直接同步到文件里，来避免数据的丢失
+            }
+            [self wechatLoginByRequestForUserInfo];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"获取access_token时出错 = %@", error);
+        }];*/
+    }
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -55,6 +101,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
