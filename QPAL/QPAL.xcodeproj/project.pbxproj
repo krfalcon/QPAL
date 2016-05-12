@@ -77,9 +77,9 @@
 		635AEAF51CE4D151000DC1A3 /* EnumHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumHelper.h; sourceTree = "<group>"; };
 		635AEAF61CE4D179000DC1A3 /* ScreenHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenHelper.h; sourceTree = "<group>"; };
 		635AEAF71CE4D189000DC1A3 /* WsAddrHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WsAddrHelper.h; sourceTree = "<group>"; };
-		635AEAF91CE4D1DA000DC1A3 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WechatAuthSDK.h; path = ../../../../Downloads/OpenSDK1.7/WechatAuthSDK.h; sourceTree = "<group>"; };
-		635AEAFA1CE4D1DA000DC1A3 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = ../../../../Downloads/OpenSDK1.7/WXApi.h; sourceTree = "<group>"; };
-		635AEAFB1CE4D1DA000DC1A3 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = ../../../../Downloads/OpenSDK1.7/WXApiObject.h; sourceTree = "<group>"; };
+		635AEAFE1CE4D6F9000DC1A3 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WechatAuthSDK.h; path = ../../../../../Downloads/OpenSDK1.7/WechatAuthSDK.h; sourceTree = "<group>"; };
+		635AEAFF1CE4D6F9000DC1A3 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = ../../../../../Downloads/OpenSDK1.7/WXApi.h; sourceTree = "<group>"; };
+		635AEB001CE4D6F9000DC1A3 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = ../../../../../Downloads/OpenSDK1.7/WXApiObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +142,9 @@
 		312AEB561CE41F8900EB828A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				635AEAF91CE4D1DA000DC1A3 /* WechatAuthSDK.h */,
-				635AEAFA1CE4D1DA000DC1A3 /* WXApi.h */,
-				635AEAFB1CE4D1DA000DC1A3 /* WXApiObject.h */,
+				635AEAFE1CE4D6F9000DC1A3 /* WechatAuthSDK.h */,
+				635AEAFF1CE4D6F9000DC1A3 /* WXApi.h */,
+				635AEB001CE4D6F9000DC1A3 /* WXApiObject.h */,
 				635AEAF51CE4D151000DC1A3 /* EnumHelper.h */,
 				635AEAF61CE4D179000DC1A3 /* ScreenHelper.h */,
 				635AEAF71CE4D189000DC1A3 /* WsAddrHelper.h */,

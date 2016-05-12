@@ -1,20 +1,20 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "201D2FFC52EB37306078BECEF85E5729EFCD751E",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6B0A9E9223DF18D5286A1FF214BE348736568BA2",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "d934bc13-ce4c-7641-ad50-bebc1102c505" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "201D2FFC52EB37306078BECEF85E5729EFCD751E" : 0,
-    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : 0,
-    "d934bc13-ce4c-7641-ad50-bebc1102c505" : 0
+    "d934bc13-ce4c-7641-ad50-bebc1102c505" : 0,
+    "6B0A9E9223DF18D5286A1FF214BE348736568BA2" : 0,
+    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "30FB46B3-0148-46F6-87FB-CF9DC2DDB840",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "201D2FFC52EB37306078BECEF85E5729EFCD751E" : "QPAL\/",
-    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : "RxWebViewController\/",
-    "d934bc13-ce4c-7641-ad50-bebc1102c505" : "..\/..\/Desktop\/TSOutlets_iOS"
+    "d934bc13-ce4c-7641-ad50-bebc1102c505" : "..\/..\/Desktop\/TSOutlets_iOS",
+    "6B0A9E9223DF18D5286A1FF214BE348736568BA2" : "QPAL\/",
+    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : "RxWebViewController\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "QPAL",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -28,7 +28,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/krfalcon\/QPAL",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "201D2FFC52EB37306078BECEF85E5729EFCD751E"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6B0A9E9223DF18D5286A1FF214BE348736568BA2"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/kd.wha.la\/svn\/TSOutlets_iOS",
