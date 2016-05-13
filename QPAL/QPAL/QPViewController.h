@@ -23,6 +23,6 @@
 
 @protocol  QPViewControllerDelegate <NSObject>
 
-- (void)pushViewControllerWithViewControllerType:(ViewControllerType)viewControllerType;
+- (void)pushViewControllerWithViewControllerType:(ViewControllerType)viewControllerType andToken:(NSString *)string;
 
 @end

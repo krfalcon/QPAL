@@ -14,15 +14,20 @@
 
 #import "QPViewController.h"
 #import "GuestViewController.h"
+#import "WeChatLoginViewController.h"
+#import "NavigationView.h"
 
 
-@interface ParentViewController : UIViewController<QPViewControllerDelegate>
+@interface ParentViewController : UIViewController<QPViewControllerDelegate,NavigationViewDelegate,GuestViewControllerDelegate,WeChatLoginViewControllerDelegate>
 {
     NavigationView          *navi;
-    TempletView             *viewControllerContainer;
     
-    UIViewController    *currentViewController;
-    UIViewController    *nextViewController;
+    TempletView             *viewControllerContainer;
+    NSMutableArray          *viewControllerArray;
+    
+    UIViewController        *currentViewController;
+    UIViewController        *nextViewController;
+
 }
 
 

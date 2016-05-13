@@ -17,6 +17,7 @@
 		3153FEB31CE478B3001B2E5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */; };
 		3153FEB51CE478BD001B2E5D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */; };
 		3153FEB71CE478C6001B2E5D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */; };
+		31E7552C1CE5AD5A00E81A2F /* WeChatLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E7552B1CE5AD5A00E81A2F /* WeChatLoginViewController.m */; };
 		631FA9651CE2334D008C31D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA9641CE2334D008C31D0 /* main.m */; };
 		631FA9681CE2334D008C31D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA9671CE2334D008C31D0 /* AppDelegate.m */; };
 		631FA96B1CE2334D008C31D0 /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA96A1CE2334D008C31D0 /* ParentViewController.m */; };
@@ -25,12 +26,6 @@
 		631FA9891CE2334D008C31D0 /* QPALUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FA9881CE2334D008C31D0 /* QPALUITests.m */; };
 		635AEAF41CE4D0DF000DC1A3 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 635AEAF31CE4D0DF000DC1A3 /* NavigationView.m */; };
 		6361D6A31CE4DB2800213ABE /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6361D6A21CE4DB2800213ABE /* libWeChatSDK.a */; };
-		6361D6B11CE4E1F600213ABE /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6361D6A51CE4E1F600213ABE /* AFHTTPSessionManager.m */; };
-		6361D6B21CE4E1F600213ABE /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6361D6A81CE4E1F600213ABE /* AFNetworkReachabilityManager.m */; };
-		6361D6B31CE4E1F600213ABE /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6361D6AA1CE4E1F600213ABE /* AFSecurityPolicy.m */; };
-		6361D6B41CE4E1F600213ABE /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6361D6AC1CE4E1F600213ABE /* AFURLRequestSerialization.m */; };
-		6361D6B51CE4E1F600213ABE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6361D6AE1CE4E1F600213ABE /* AFURLResponseSerialization.m */; };
-		6361D6B61CE4E1F600213ABE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6361D6B01CE4E1F600213ABE /* AFURLSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +60,8 @@
 		3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		31E7552A1CE5AD5A00E81A2F /* WeChatLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatLoginViewController.h; sourceTree = "<group>"; };
+		31E7552B1CE5AD5A00E81A2F /* WeChatLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatLoginViewController.m; sourceTree = "<group>"; };
 		631FA9601CE2334D008C31D0 /* QPAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QPAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		631FA9641CE2334D008C31D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		631FA9661CE2334D008C31D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,19 +85,6 @@
 		635AEAFF1CE4D6F9000DC1A3 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = ../../../../../Downloads/OpenSDK1.7/WXApi.h; sourceTree = "<group>"; };
 		635AEB001CE4D6F9000DC1A3 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = ../../../../../Downloads/OpenSDK1.7/WXApiObject.h; sourceTree = "<group>"; };
 		6361D6A21CE4DB2800213ABE /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = ../../../../Downloads/OpenSDK1.7/libWeChatSDK.a; sourceTree = "<group>"; };
-		6361D6A41CE4E1F600213ABE /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFHTTPSessionManager.h"; sourceTree = "<group>"; };
-		6361D6A51CE4E1F600213ABE /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFHTTPSessionManager.m"; sourceTree = "<group>"; };
-		6361D6A61CE4E1F600213ABE /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFNetworking.h"; sourceTree = "<group>"; };
-		6361D6A71CE4E1F600213ABE /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFNetworkReachabilityManager.h"; sourceTree = "<group>"; };
-		6361D6A81CE4E1F600213ABE /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFNetworkReachabilityManager.m"; sourceTree = "<group>"; };
-		6361D6A91CE4E1F600213ABE /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFSecurityPolicy.h"; sourceTree = "<group>"; };
-		6361D6AA1CE4E1F600213ABE /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFSecurityPolicy.m"; sourceTree = "<group>"; };
-		6361D6AB1CE4E1F600213ABE /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFURLRequestSerialization.h"; sourceTree = "<group>"; };
-		6361D6AC1CE4E1F600213ABE /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFURLRequestSerialization.m"; sourceTree = "<group>"; };
-		6361D6AD1CE4E1F600213ABE /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFURLResponseSerialization.h"; sourceTree = "<group>"; };
-		6361D6AE1CE4E1F600213ABE /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFURLResponseSerialization.m"; sourceTree = "<group>"; };
-		6361D6AF1CE4E1F600213ABE /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFURLSessionManager.h"; sourceTree = "<group>"; };
-		6361D6B01CE4E1F600213ABE /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = "../../../../../Downloads/AFNetworking-master/AFNetworking/AFURLSessionManager.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +141,8 @@
 				312AEB5B1CE424A100EB828A /* QPViewController.m */,
 				312AEB5D1CE430E400EB828A /* GuestViewController.h */,
 				312AEB5E1CE430E400EB828A /* GuestViewController.m */,
+				31E7552A1CE5AD5A00E81A2F /* WeChatLoginViewController.h */,
+				31E7552B1CE5AD5A00E81A2F /* WeChatLoginViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -164,7 +150,6 @@
 		312AEB561CE41F8900EB828A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				6361D6B71CE4E1FD00213ABE /* AFNetWorking */,
 				635AEAFE1CE4D6F9000DC1A3 /* WechatAuthSDK.h */,
 				635AEAFF1CE4D6F9000DC1A3 /* WXApi.h */,
 				635AEB001CE4D6F9000DC1A3 /* WXApiObject.h */,
@@ -249,26 +234,6 @@
 				631FA98A1CE2334D008C31D0 /* Info.plist */,
 			);
 			path = QPALUITests;
-			sourceTree = "<group>";
-		};
-		6361D6B71CE4E1FD00213ABE /* AFNetWorking */ = {
-			isa = PBXGroup;
-			children = (
-				6361D6A41CE4E1F600213ABE /* AFHTTPSessionManager.h */,
-				6361D6A51CE4E1F600213ABE /* AFHTTPSessionManager.m */,
-				6361D6A61CE4E1F600213ABE /* AFNetworking.h */,
-				6361D6A71CE4E1F600213ABE /* AFNetworkReachabilityManager.h */,
-				6361D6A81CE4E1F600213ABE /* AFNetworkReachabilityManager.m */,
-				6361D6A91CE4E1F600213ABE /* AFSecurityPolicy.h */,
-				6361D6AA1CE4E1F600213ABE /* AFSecurityPolicy.m */,
-				6361D6AB1CE4E1F600213ABE /* AFURLRequestSerialization.h */,
-				6361D6AC1CE4E1F600213ABE /* AFURLRequestSerialization.m */,
-				6361D6AD1CE4E1F600213ABE /* AFURLResponseSerialization.h */,
-				6361D6AE1CE4E1F600213ABE /* AFURLResponseSerialization.m */,
-				6361D6AF1CE4E1F600213ABE /* AFURLSessionManager.h */,
-				6361D6B01CE4E1F600213ABE /* AFURLSessionManager.m */,
-			);
-			name = AFNetWorking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,17 +366,12 @@
 			files = (
 				312AEB5C1CE424A100EB828A /* QPViewController.m in Sources */,
 				312AEB521CE41F2F00EB828A /* TempletView.m in Sources */,
-				6361D6B21CE4E1F600213ABE /* AFNetworkReachabilityManager.m in Sources */,
-				6361D6B61CE4E1F600213ABE /* AFURLSessionManager.m in Sources */,
-				6361D6B41CE4E1F600213ABE /* AFURLRequestSerialization.m in Sources */,
 				631FA96B1CE2334D008C31D0 /* ParentViewController.m in Sources */,
-				6361D6B51CE4E1F600213ABE /* AFURLResponseSerialization.m in Sources */,
-				6361D6B11CE4E1F600213ABE /* AFHTTPSessionManager.m in Sources */,
 				312AEB471CE41D0600EB828A /* QPView.m in Sources */,
+				31E7552C1CE5AD5A00E81A2F /* WeChatLoginViewController.m in Sources */,
 				631FA9681CE2334D008C31D0 /* AppDelegate.m in Sources */,
 				635AEAF41CE4D0DF000DC1A3 /* NavigationView.m in Sources */,
 				631FA9651CE2334D008C31D0 /* main.m in Sources */,
-				6361D6B31CE4E1F600213ABE /* AFSecurityPolicy.m in Sources */,
 				312AEB5F1CE430E400EB828A /* GuestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,7 +446,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LIBRARY_SEARCH_PATHS = /Users/krfalcon/Downloads/OpenSDK1.7/;
+				LIBRARY_SEARCH_PATHS = /Users/zhengjuting/Downloads/OpenSDK1.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -530,7 +490,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LIBRARY_SEARCH_PATHS = /Users/krfalcon/Downloads/OpenSDK1.7/;
+				LIBRARY_SEARCH_PATHS = /Users/zhengjuting/Downloads/OpenSDK1.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (

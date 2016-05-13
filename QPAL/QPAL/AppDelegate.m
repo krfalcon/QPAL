@@ -43,46 +43,57 @@
     if ([resp isKindOfClass:[SendAuthResp class]]) {
         SendAuthResp *temp = (SendAuthResp *)resp;
         
-        
-        
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-        
+        NSError *error;
         NSString *accessUrlStr = [NSString stringWithFormat:@"%@/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", WX_BASE_URL, WXPatient_App_ID, WXPatient_App_Secret, temp.code];
-        NSURL *URL = [NSURL URLWithString:accessUrlStr];
-        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+        NSURL *url = [NSURL URLWithString:accessUrlStr];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         
-        NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@", error);
-            } else {
-                NSLog(@"%@ %@", response, responseObject);
-            }
-        }];
-        [dataTask resume];
+        NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+        //NSLog(@"%@", resDic);
+        NSString *accessToken = [resDic objectForKey:@"access_token"];
+        NSString *unionID = [resDic objectForKey:@"unionid"];
         
-        /*
-        AFURLSessionManager *manager = [AFURLSessionManager manager];
-        NSString *accessUrlStr = [NSString stringWithFormat:@"%@/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", WX_BASE_URL, WXPatient_App_ID, WXPatient_App_Secret, temp.code];
-        [manager GET:accessUrlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"请求access的response = %@", responseObject);
-            NSDictionary *accessDict = [NSDictionary dictionaryWithDictionary:responseObject];
-            NSString *accessToken = [accessDict objectForKey:WX_ACCESS_TOKEN];
-            NSString *openID = [accessDict objectForKey:WX_OPEN_ID];
-            NSString *refreshToken = [accessDict objectForKey:WX_REFRESH_TOKEN];
-            // 本地持久化，以便access_token的使用、刷新或者持续
-            if (accessToken && ![accessToken isEqualToString:@""] && openID && ![openID isEqualToString:@""]) {
-                [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:WX_ACCESS_TOKEN];
-                [[NSUserDefaults standardUserDefaults] setObject:openID forKey:WX_OPEN_ID];
-                [[NSUserDefaults standardUserDefaults] setObject:refreshToken forKey:WX_REFRESH_TOKEN];
-                [[NSUserDefaults standardUserDefaults] synchronize]; // 命令直接同步到文件里，来避免数据的丢失
-            }
-            [self wechatLoginByRequestForUserInfo];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"获取access_token时出错 = %@", error);
-        }];*/
+        NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
+        [defalts setObject:unionID forKey:@"unionid"];
+        [defalts setObject:accessToken forKey:@"access_token"];
+        
+        [defalts synchronize];
+        
+        [self getUserTokenWithUnionID:unionID];
+        
     }
 }
+
+- (void)getUserTokenWithUnionID:(NSString *)string {
+    NSError *error;
+    NSString *accessUrlStr = [NSString stringWithFormat:@"http://qpal.dgshare.cn/crm/GetCustomerByUnionId?UnionId=%@", string];
+    NSURL *url = [NSURL URLWithString:accessUrlStr];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+    NSLog(@"%@", resDic);
+    //NSString *userToken = [[resDic objectForKey:@"c"] objectForKey:@"Token"];
+    if (resDic[@"c"] != [NSNull null]) {
+        NSString *userToken = [NSString stringWithFormat:@"%@",resDic[@"c"][@"Token"]];
+        
+        NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
+        [defalts setObject:userToken forKey:@"userToken"];
+        
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserToken" object:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登陆失败"
+                                                        message:@"请关注百联青浦奥莱微信公众号后尝试登陆"
+                                                       delegate:self
+                                               cancelButtonTitle:@"好的"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

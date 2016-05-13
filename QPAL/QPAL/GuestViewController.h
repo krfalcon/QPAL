@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ParentViewController.h"
 
-@interface GuestViewController : UIViewController
+
+@protocol GuestViewControllerDelegate;
+
+@interface GuestViewController : UIViewController<UIWebViewDelegate>
+
+@property (strong, nonatomic) UIWebView*    webView;
+@property (weak, nonatomic)  id<GuestViewControllerDelegate>      delegate;
+
+@end
+
+@protocol GuestViewControllerDelegate <NSObject>
+
+- (void)GuestViewUpdateTitle:(NSString*)title;
 
 @end

@@ -32,14 +32,35 @@
         NSLog(@"%@:%@", cookiee.name, cookiee.value);
     }*/
     
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    UIWebView *wb = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    _webView = wb;
+    _webView.delegate = self;
+    
     NSURL *url = [NSURL URLWithString:@"http://qpal.dgshare.cn"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPShouldHandleCookies:YES];
-    [request setValue:[NSString stringWithFormat:@"UserToken=e3ebc8d2-0f06-44a8-b6de-4bcffe404d5e"] forHTTPHeaderField:@"Cookie"];
-    [webView loadRequest:request];
+    [request setHTTPShouldHandleCookies:NO];
+    //[request setValue:[NSString stringWithFormat:@"UserToken=e3ebc8d2-0f06-44a8-b6de-4bcffe404d5e"] forHTTPHeaderField:@"Cookie"];
+    [_webView loadRequest:request];
     
-    [self.view addSubview:webView];
+    [self.view addSubview:_webView];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+
+    NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    if (theTitle.length > 10) {
+        theTitle = [[theTitle substringToIndex:9] stringByAppendingString:@"…"];
+    }
+    self.title = theTitle;
+    [self updateNavTitle:theTitle];
+    //    [self.progressView setProgress:1 animated:NO];
+}
+
+- (void)updateNavTitle:(NSString *)title
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(GuestViewUpdateTitle:)]) {
+        [_delegate GuestViewUpdateTitle:title ];
+    }
 }
 
 @end

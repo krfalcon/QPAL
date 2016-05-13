@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ParentViewController.h"
 #import "WXApi.h"
-#import "AFNetworking.h"
 
 #import "WsAddrHelper.h"
 

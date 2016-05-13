@@ -23,8 +23,8 @@
 }
 
 - (void)guestLogin {
-    if (_delegate && [_delegate respondsToSelector:@selector(pushViewControllerWithViewControllerType:)]) {
-        [_delegate pushViewControllerWithViewControllerType:ViewControllerTypeGuest];
+    if (_delegate && [_delegate respondsToSelector:@selector(pushViewControllerWithViewControllerType:andToken:)]) {
+        [_delegate pushViewControllerWithViewControllerType:ViewControllerTypeGuest andToken:nil];
     }}
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,8 @@
 
 #import "NavigationView.h"
 #import "ScreenHelper.h"
+#import "GuestViewController.h"
+
 
 @implementation NavigationView
 
@@ -113,8 +115,8 @@
     [navigationBarNew setShadowImage:nil];
     [self insertSubview:navigationBarNew belowSubview:[self viewWithTag:11]];
     
-    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:title];
-    [navigationBarNew pushNavigationItem:navigationItem animated:YES];
+    _navigationItem = [[UINavigationItem alloc] initWithTitle:title];
+    [navigationBarNew pushNavigationItem:_navigationItem animated:YES];
     
     if (isIndex) {
         UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 60, 44)];
@@ -191,6 +193,12 @@
 
 - (void)didGetMessage:(BOOL)message {
     [(UIImageView *)[self viewWithTag:10] setImage:[UIImage imageNamed:message ? @"NaviMember_Msg" : @"NaviMember"]];
+}
+
+- (void)updateTitle:(NSString *)title {
+    _navigationItem.title = title;
+    //[navigationBarNew pushNavigationItem:_navigationItem animated:YES];
+
 }
 
 @end

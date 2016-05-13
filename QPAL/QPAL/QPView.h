@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TempletView.h"
 #import "WXApi.h"
+#import "WsAddrHelper.h"
 
 @protocol QPViewDelegate;
 

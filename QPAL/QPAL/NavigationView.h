@@ -15,11 +15,13 @@
     UINavigationBar*        navigationBar;
     UINavigationBar*        navigationBarNew;
     
+    
     NSMutableArray*         navigationBarArray;
 }
 @property (weak, nonatomic)     id<NavigationViewDelegate>      delegate;
 @property (assign, nonatomic)   int                             color;
 @property (assign, nonatomic)   BOOL                            hasNew;
+@property (strong, nonatomic) UINavigationItem                  *navigationItem;
 
 - (id)initWithFrame:(CGRect)frame andColor:(int)color andTitle:(NSString *)title;
 - (void)createNextNavigationBarWithColor:(UIColor *)color andTitle:(NSString *)title andIsIndex:(BOOL)isIndex;
@@ -30,6 +32,7 @@
 - (void)changeNavigationBarDeleteArray;
 
 - (void)didGetMessage:(BOOL)message;
+- (void)updateTitle:(NSString *)title;
 
 @end
 
@@ -37,4 +40,5 @@
 - (void)navigationViewDidTapBackButton:(NavigationView *)navigationView;
 - (void)navigationViewDidTapQRCodeButton:(NavigationView *)navigationView;
 - (void)navigationViewDidTapMemberButton;
+
 @end
