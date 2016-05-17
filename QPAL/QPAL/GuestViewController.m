@@ -36,7 +36,7 @@
     _webView = wb;
     _webView.delegate = self;
     
-    NSURL *url = [NSURL URLWithString:@"http://qpal.dgshare.cn"];
+    NSURL *url = [NSURL URLWithString:@"http://bbb.dgshare.cn"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPShouldHandleCookies:NO];
     //[request setValue:[NSString stringWithFormat:@"UserToken=e3ebc8d2-0f06-44a8-b6de-4bcffe404d5e"] forHTTPHeaderField:@"Cookie"];
