@@ -31,6 +31,9 @@
             case 2:
                 themeColor = ThemeYellow;
                 break;
+            case 3:
+                themeColor = ThemeBlack;
+                break;
             default:
                 themeColor = ThemeRed;
                 break;

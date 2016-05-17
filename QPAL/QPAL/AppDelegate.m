@@ -18,16 +18,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //向微信注册
+    [WXApi registerApp:@"wx5977fde560a391fd" withDescription:@"weixin"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
     
     _currentController = [[ParentViewController alloc] init];
     [self.window setRootViewController: _currentController];
     [self.window makeKeyAndVisible];
-    
-    
-    //向微信注册
-    [WXApi registerApp:@"wx5977fde560a391fd" withDescription:@"weixin"];
     
     return YES;
 }
@@ -85,7 +84,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserToken" object:nil];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登陆失败"
-                                                        message:@"请关注百联青浦奥莱微信公众号后尝试登陆"
+                                                        message:@"请关注百联青浦奥莱微信公众号后登陆"
                                                        delegate:self
                                                cancelButtonTitle:@"好的"
                                               otherButtonTitles:nil, nil];

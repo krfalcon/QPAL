@@ -30,7 +30,8 @@
     [guestButton addSubview:guestLogin];
     
     
-
+    if ([WXApi isWXAppInstalled])
+    {
         UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(67.5 * self.scale, 470 *    self.scale, 240 * self.scale, 40 * self.scale)];
         [weChatButton setTag:1];
         [weChatButton setExclusiveTouch:YES];
@@ -40,7 +41,7 @@
         UIImageView *weChatLogin = [[UIImageView alloc] initWithFrame:weChatButton.bounds];
         [weChatLogin setImage:[UIImage imageNamed:@"btn-weixin"]];
         [weChatButton addSubview:weChatLogin];
-    
+    }
 }
 
 #pragma mark - Button Events

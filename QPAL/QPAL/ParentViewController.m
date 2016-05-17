@@ -27,7 +27,7 @@
     [viewControllerContainer setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
     [self.view addSubview:viewControllerContainer];
     
-    navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:1 andTitle:@"登陆"];
+    navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:3 andTitle:@"登陆"];
     [navi setDelegate:self];
     [self.view addSubview:navi];
     
@@ -56,10 +56,16 @@
     switch (viewControllerType) {
         case ViewControllerTypeGuest:
         {
+            NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+            for (NSHTTPCookie *cookie in [storage cookies]) {
+                [storage deleteCookie:cookie];
+            }
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
             guestViewController = [[GuestViewController alloc] init];
             [guestViewController setDelegate:self];
             
-            [navi createNextNavigationBarWithColor:ThemeBlue andTitle:@"" andIsIndex:NO];
+            [navi createNextNavigationBarWithColor:ThemeBlack andTitle:@"" andIsIndex:NO];
             
             nextViewController = guestViewController;
             
@@ -73,7 +79,7 @@
             
             weChatViewController.userToken = string;
             
-            [navi createNextNavigationBarWithColor:ThemeBlue andTitle:@"" andIsIndex:NO];
+            [navi createNextNavigationBarWithColor:ThemeBlack andTitle:@"" andIsIndex:NO];
             
             nextViewController = weChatViewController;
             

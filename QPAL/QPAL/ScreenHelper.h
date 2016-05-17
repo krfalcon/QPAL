@@ -50,6 +50,9 @@
 
 //Colors
 
+//Black
+#define ThemeBlack              [UIColor colorWithRed:51.f/255.f green: 50.f/255.f blue:56.f/255.f alpha:1]
+
 //Red
 
 #define ThemeRed                [UIColor colorWithRed:255.f/255.f green: 79.f/255.f blue:104.f/255.f alpha:1]
