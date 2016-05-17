@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WsAddrHelper.h"
 
 
 @protocol WeChatLoginViewControllerDelegate;

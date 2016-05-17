@@ -66,7 +66,7 @@
 
 - (void)getUserTokenWithUnionID:(NSString *)string {
     NSError *error;
-    NSString *accessUrlStr = [NSString stringWithFormat:@"http://qpal.dgshare.cn/crm/GetCustomerByUnionId?UnionId=%@", string];
+    NSString *accessUrlStr = [NSString stringWithFormat:@"%@%@", WXAPI, string];
     NSURL *url = [NSURL URLWithString:accessUrlStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
