@@ -172,4 +172,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)navigationViewDidTapQRCodeButton:(NavigationView *)navigationView
+{
+    
+}
+
+- (void)navigationViewDidTapMemberButton;
+{
+    
+}
+
+
 @end
