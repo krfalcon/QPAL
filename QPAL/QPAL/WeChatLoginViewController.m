@@ -48,18 +48,19 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    NSString *url = [webView stringByEvaluatingJavaScriptFromString:@"document.location.href"];
     if (theTitle.length > 10) {
         theTitle = [[theTitle substringToIndex:9] stringByAppendingString:@"…"];
     }
     self.title = theTitle;
-    [self updateNavTitle:theTitle];
+    [self updateNavTitle:theTitle andUrl:url];
     //    [self.progressView setProgress:1 animated:NO];
 }
 
-- (void)updateNavTitle:(NSString *)title
+- (void)updateNavTitle:(NSString *)title andUrl:(NSString *)url
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(weChatViewUpdateTitle:)]) {
-        [_delegate weChatViewUpdateTitle:title ];
+    if (_delegate && [_delegate respondsToSelector:@selector(weChatViewUpdateTitle:andUrl:)]) {
+        [_delegate weChatViewUpdateTitle:title andUrl:url ];
     }
 }
 

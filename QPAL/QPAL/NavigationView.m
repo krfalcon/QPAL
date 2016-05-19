@@ -71,7 +71,7 @@
         [backImage setImage:[UIImage imageNamed:@"NaviCode"]];
         [back addSubview:backImage];
         
-        UIButton *member = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 60, 20, 60, 44)];
+        UIButton *member = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 70, 20, 60, 44)];
         [member addTarget:self action:@selector(tappedMemberButton) forControlEvents:UIControlEventTouchUpInside];
         [member setTag:11];
         [self insertSubview:member atIndex:10];
@@ -198,8 +198,11 @@
     [(UIImageView *)[self viewWithTag:10] setImage:[UIImage imageNamed:message ? @"NaviMember_Msg" : @"NaviMember"]];
 }
 
-- (void)updateTitle:(NSString *)title {
-    _navigationItem.title = title;
+- (void)updateTitle:(NSString *)title andUrl:(NSString *)url
+{
+    _title = title;
+    _url = url;
+    _navigationItem.title = _title;
     //[navigationBarNew pushNavigationItem:_navigationItem animated:YES];
 
 }

@@ -22,6 +22,9 @@
 @property (assign, nonatomic)   int                             color;
 @property (assign, nonatomic)   BOOL                            hasNew;
 @property (strong, nonatomic) UINavigationItem                  *navigationItem;
+@property (strong, nonatomic)  NSString                         *title;
+@property (strong, nonatomic)  NSString                         *url;
+
 
 - (id)initWithFrame:(CGRect)frame andColor:(int)color andTitle:(NSString *)title;
 - (void)createNextNavigationBarWithColor:(UIColor *)color andTitle:(NSString *)title andIsIndex:(BOOL)isIndex;
@@ -32,7 +35,7 @@
 - (void)changeNavigationBarDeleteArray;
 
 - (void)didGetMessage:(BOOL)message;
-- (void)updateTitle:(NSString *)title;
+- (void)updateTitle:(NSString *)title andUrl:(NSString *)url;
 
 @end
 

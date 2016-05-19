@@ -21,6 +21,6 @@
 
 @protocol GuestViewControllerDelegate <NSObject>
 
-- (void)GuestViewUpdateTitle:(NSString*)title;
+- (void)GuestViewUpdateTitle:(NSString*)title andUrl:(NSString*)url;
 
 @end

@@ -17,6 +17,9 @@
 #import "WeChatLoginViewController.h"
 #import "NavigationView.h"
 
+#import "ZYShareView.h"
+#import "WXApi.h"
+
 
 @interface ParentViewController : UIViewController<QPViewControllerDelegate,NavigationViewDelegate,GuestViewControllerDelegate,WeChatLoginViewControllerDelegate>
 {
