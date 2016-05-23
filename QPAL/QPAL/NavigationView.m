@@ -63,23 +63,6 @@
         UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:title];
         [navigationBar pushNavigationItem:navigationItem animated:YES];
         
-        UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 60, 44)];
-        [back addTarget:self action:@selector(tappedCodeButton) forControlEvents:UIControlEventTouchUpInside];
-        [navigationBar addSubview:back];
-        
-        UIImageView *backImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 35, 30)];
-        [backImage setImage:[UIImage imageNamed:@"NaviCode"]];
-        [back addSubview:backImage];
-        
-        UIButton *member = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 70, 20, 60, 44)];
-        [member addTarget:self action:@selector(tappedMemberButton) forControlEvents:UIControlEventTouchUpInside];
-        [member setTag:11];
-        [self insertSubview:member atIndex:10];
-        
-        UIImageView *memberImage = [[UIImageView alloc] initWithFrame:CGRectMake(25, 7, 30, 30)];
-        [memberImage setImage:[UIImage imageNamed:@"NaviMember"]];
-        [memberImage setTag:10];
-        [member addSubview:memberImage];
         
         navigationBarArray = [[NSMutableArray alloc] init];
         [navigationBarArray addObject:navigationBar];
@@ -116,7 +99,7 @@
     [navigationBarNew setTintColor:[UIColor whiteColor]];
     [navigationBarNew setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:20.f]}];
     [navigationBarNew setShadowImage:nil];
-    [self insertSubview:navigationBarNew belowSubview:[self viewWithTag:11]];
+    [self addSubview:navigationBarNew];
     
     _navigationItem = [[UINavigationItem alloc] initWithTitle:title];
     [navigationBarNew pushNavigationItem:_navigationItem animated:YES];
@@ -137,6 +120,14 @@
         UIImageView *backImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
         [backImage setImage:[UIImage imageNamed:@"NaviBack"]];
         [back addSubview:backImage];
+        
+        UIButton *member = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 70, 20, 60, 44)];
+        [member addTarget:self action:@selector(tappedMemberButton) forControlEvents:UIControlEventTouchUpInside];
+        [navigationBarNew addSubview:member];
+        
+        UIImageView *memberImage = [[UIImageView alloc] initWithFrame:CGRectMake(25, 7, 30, 30)];
+        [memberImage setImage:[UIImage imageNamed:@"NaviMember"]];
+        [member addSubview:memberImage];
     }
     
     //    UIButton *member = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 60, 20, 60, 44)];

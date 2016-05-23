@@ -59,16 +59,27 @@
         }
         
         case 1:
-            if ([WXApi isWXAppInstalled]) {
-                SendAuthReq *req = [[SendAuthReq alloc] init];
-                req.scope = @"snsapi_userinfo";
-                req.state = @"App";
-                [WXApi sendReq:req];
+        {
+            NSString *acessToken =  [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"];
+            NSString *unionID = [[NSUserDefaults standardUserDefaults] objectForKey:@"unionid"];
+            if (acessToken && unionID) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserToken" object:nil];
+            } else {
+                [self wechatLogin];
             }
             break;
-            
+        }
         default:
             break;
+    }
+}
+
+- (void)wechatLogin {
+    if ([WXApi isWXAppInstalled]) {
+        SendAuthReq *req = [[SendAuthReq alloc] init];
+        req.scope = @"snsapi_userinfo";
+        req.state = @"App";
+        [WXApi sendReq:req];
     }
 }
 

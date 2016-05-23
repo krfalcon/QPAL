@@ -23,6 +23,7 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showTipViewWithMessage:) name:@"shouldShowTip" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserToken) name:@"getUserToken" object:nil];
     
     viewControllerContainer = [[TempletView alloc] initWithFrame:self.view.bounds];
     [viewControllerContainer setBackgroundColor:AbsoluteWhite];
@@ -41,8 +42,6 @@
     
     viewControllerArray = [[NSMutableArray alloc] init];
     [viewControllerArray addObject:currentViewController];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserToken) name:@"getUserToken" object:nil];
     
 }
 

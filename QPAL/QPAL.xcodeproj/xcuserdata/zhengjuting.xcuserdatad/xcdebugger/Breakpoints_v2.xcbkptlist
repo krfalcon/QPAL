@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QPAL/ParentViewController.m"
-            timestampString = "485676369.230187"
+            timestampString = "485681262.890981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-getUserToken"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QPAL/NavigationView.m"
-            timestampString = "485340467.936159"
+            timestampString = "485682893.440209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-createNextNavigationBarWithColor:andTitle:andIsIndex:"
             landmarkType = "5">
             <Locations>
