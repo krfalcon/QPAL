@@ -41,6 +41,7 @@
     // 向微信请求授权后,得到响应结果
     if ([resp isKindOfClass:[SendAuthResp class]]) {
         SendAuthResp *temp = (SendAuthResp *)resp;
+        if (temp.code) {
         
         NSError *error;
         NSString *accessUrlStr = [NSString stringWithFormat:@"%@/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code", WX_BASE_URL, WXPatient_App_ID, WXPatient_App_Secret, temp.code];
@@ -60,6 +61,9 @@
         [defalts synchronize];
         
         [self getUserTokenWithUnionID:unionID];
+        } else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldShowTip" object:@"微信授权失败！"];
+        }
         
     }
 }

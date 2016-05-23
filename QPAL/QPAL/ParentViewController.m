@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showTipViewWithMessage:) name:@"shouldShowTip" object:nil];
+    
     viewControllerContainer = [[TempletView alloc] initWithFrame:self.view.bounds];
     [viewControllerContainer setBackgroundColor:AbsoluteWhite];
     [viewControllerContainer setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
@@ -253,6 +255,13 @@
     req.scene = WXSceneFavorite;
     
     [WXApi sendReq:req];
+}
+
+- (void)showTipViewWithMessage:(NSNotification *)notification {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:[notification object] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:actionConfirm];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
