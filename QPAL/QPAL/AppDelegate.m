@@ -93,6 +93,9 @@
                                                cancelButtonTitle:@"好的"
                                               otherButtonTitles:nil, nil];
         [alert show];
+        NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
+        [defalts removeObjectForKey:@"access_token"];
+        [defalts removeObjectForKey:@"unionid"];
     }
     
 }

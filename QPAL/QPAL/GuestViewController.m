@@ -32,7 +32,7 @@
 
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     NSString *url = [webView stringByEvaluatingJavaScriptFromString:@"document.location.href"];
-    NSLog(@"%@",url);
+    
     if (theTitle.length > 10) {
         theTitle = [[theTitle substringToIndex:9] stringByAppendingString:@"…"];
     }
