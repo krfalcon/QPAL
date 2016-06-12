@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QPAL/ParentViewController.m"
-            timestampString = "484822335.640957"
+            timestampString = "485681262.890981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-getUserToken"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,13 +58,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QPAL/NavigationView.m"
-            timestampString = "485073253.926752"
+            timestampString = "485682893.440209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-createNextNavigationBarWithColor:andTitle:andIsIndex:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NavigationView createNextNavigationBarWithColor:andTitle:andIsIndex:]"
+                  moduleName = "QPAL"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengjuting/Documents/Krfalcon/QPAL/QPAL/QPAL/NavigationView.m"
+                  timestampString = "487394117.959772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "1624">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NavigationView createNextNavigationBarWithColor:andTitle:andIsIndex:]"
+                  moduleName = "QPAL"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengjuting/Documents/Krfalcon/QPAL/QPAL/QPAL/NavigationView.m"
+                  timestampString = "487394117.959865"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "1648">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,12 +106,26 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QPAL/GuestViewController.m"
-            timestampString = "484822005.002894"
+            timestampString = "485676643.707283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-webViewDidFinishLoad:"
+            startingLineNumber = "61"
+            endingLineNumber = "61">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/AppDelegate.m"
+            timestampString = "486615975.109514"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-onResp:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -17,6 +17,11 @@
 		3153FEB31CE478B3001B2E5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */; };
 		3153FEB51CE478BD001B2E5D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */; };
 		3153FEB71CE478C6001B2E5D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */; };
+		31AE5CA11CED9BE500072CF0 /* ZYShareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C971CED9BE500072CF0 /* ZYShareItem.m */; };
+		31AE5CA21CED9BE500072CF0 /* ZYShareItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C991CED9BE500072CF0 /* ZYShareItemCell.m */; };
+		31AE5CA31CED9BE500072CF0 /* ZYShareSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C9B1CED9BE500072CF0 /* ZYShareSheetCell.m */; };
+		31AE5CA41CED9BE500072CF0 /* ZYShareSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C9D1CED9BE500072CF0 /* ZYShareSheetView.m */; };
+		31AE5CA51CED9BE500072CF0 /* ZYShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C9F1CED9BE500072CF0 /* ZYShareView.m */; };
 		31BA27DE1CE9B5CA00E13B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31BA27DD1CE9B5C900E13B20 /* Images.xcassets */; };
 		31BB852A1CE9BF2F00DC3AB3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31BB85291CE9BF2F00DC3AB3 /* Default-568h@2x.png */; };
 		31E7552C1CE5AD5A00E81A2F /* WeChatLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E7552B1CE5AD5A00E81A2F /* WeChatLoginViewController.m */; };
@@ -62,6 +67,17 @@
 		3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		31AE5C961CED9BE500072CF0 /* ZYShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareItem.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItem.h"; sourceTree = "<group>"; };
+		31AE5C971CED9BE500072CF0 /* ZYShareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYShareItem.m; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItem.m"; sourceTree = "<group>"; };
+		31AE5C981CED9BE500072CF0 /* ZYShareItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareItemCell.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItemCell.h"; sourceTree = "<group>"; };
+		31AE5C991CED9BE500072CF0 /* ZYShareItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYShareItemCell.m; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItemCell.m"; sourceTree = "<group>"; };
+		31AE5C9A1CED9BE500072CF0 /* ZYShareSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareSheetCell.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareSheetCell.h"; sourceTree = "<group>"; };
+		31AE5C9B1CED9BE500072CF0 /* ZYShareSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYShareSheetCell.m; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareSheetCell.m"; sourceTree = "<group>"; };
+		31AE5C9C1CED9BE500072CF0 /* ZYShareSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareSheetView.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareSheetView.h"; sourceTree = "<group>"; };
+		31AE5C9D1CED9BE500072CF0 /* ZYShareSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYShareSheetView.m; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareSheetView.m"; sourceTree = "<group>"; };
+		31AE5C9E1CED9BE500072CF0 /* ZYShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareView.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareView.h"; sourceTree = "<group>"; };
+		31AE5C9F1CED9BE500072CF0 /* ZYShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYShareView.m; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareView.m"; sourceTree = "<group>"; };
+		31AE5CA01CED9BE500072CF0 /* ZYShareViewDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareViewDefine.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareViewDefine.h"; sourceTree = "<group>"; };
 		31BA27DD1CE9B5C900E13B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		31BB85291CE9BF2F00DC3AB3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		31E7552A1CE5AD5A00E81A2F /* WeChatLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatLoginViewController.h; sourceTree = "<group>"; };
@@ -154,6 +170,17 @@
 		312AEB561CE41F8900EB828A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				31AE5C961CED9BE500072CF0 /* ZYShareItem.h */,
+				31AE5C971CED9BE500072CF0 /* ZYShareItem.m */,
+				31AE5C981CED9BE500072CF0 /* ZYShareItemCell.h */,
+				31AE5C991CED9BE500072CF0 /* ZYShareItemCell.m */,
+				31AE5C9A1CED9BE500072CF0 /* ZYShareSheetCell.h */,
+				31AE5C9B1CED9BE500072CF0 /* ZYShareSheetCell.m */,
+				31AE5C9C1CED9BE500072CF0 /* ZYShareSheetView.h */,
+				31AE5C9D1CED9BE500072CF0 /* ZYShareSheetView.m */,
+				31AE5C9E1CED9BE500072CF0 /* ZYShareView.h */,
+				31AE5C9F1CED9BE500072CF0 /* ZYShareView.m */,
+				31AE5CA01CED9BE500072CF0 /* ZYShareViewDefine.h */,
 				635AEAFE1CE4D6F9000DC1A3 /* WechatAuthSDK.h */,
 				635AEAFF1CE4D6F9000DC1A3 /* WXApi.h */,
 				635AEB001CE4D6F9000DC1A3 /* WXApiObject.h */,
@@ -377,7 +404,12 @@
 				631FA96B1CE2334D008C31D0 /* ParentViewController.m in Sources */,
 				312AEB471CE41D0600EB828A /* QPView.m in Sources */,
 				31E7552C1CE5AD5A00E81A2F /* WeChatLoginViewController.m in Sources */,
+				31AE5CA51CED9BE500072CF0 /* ZYShareView.m in Sources */,
+				31AE5CA11CED9BE500072CF0 /* ZYShareItem.m in Sources */,
+				31AE5CA21CED9BE500072CF0 /* ZYShareItemCell.m in Sources */,
+				31AE5CA41CED9BE500072CF0 /* ZYShareSheetView.m in Sources */,
 				631FA9681CE2334D008C31D0 /* AppDelegate.m in Sources */,
+				31AE5CA31CED9BE500072CF0 /* ZYShareSheetCell.m in Sources */,
 				635AEAF41CE4D0DF000DC1A3 /* NavigationView.m in Sources */,
 				631FA9651CE2334D008C31D0 /* main.m in Sources */,
 				312AEB5F1CE430E400EB828A /* GuestViewController.m in Sources */,

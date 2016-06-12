@@ -31,19 +31,26 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    NSString *url = [webView stringByEvaluatingJavaScriptFromString:@"document.location.href"];
+    
     if (theTitle.length > 10) {
         theTitle = [[theTitle substringToIndex:9] stringByAppendingString:@"…"];
     }
     self.title = theTitle;
-    [self updateNavTitle:theTitle];
+    [self updateNavTitle:theTitle andUrl:url];
     //    [self.progressView setProgress:1 animated:NO];
 }
 
-- (void)updateNavTitle:(NSString *)title
+- (void)updateNavTitle:(NSString *)title andUrl:(NSString *)url
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(GuestViewUpdateTitle:)]) {
-        [_delegate GuestViewUpdateTitle:title ];
+    if (_delegate && [_delegate respondsToSelector:@selector(GuestViewUpdateTitle:andUrl:)]) {
+        [_delegate GuestViewUpdateTitle:title andUrl:url ];
     }
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldShowTip" object:@"网络异常！请检查网络连接状况！"];
 }
 
 @end

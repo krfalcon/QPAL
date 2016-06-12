@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showTipViewWithMessage:) name:@"shouldShowTip" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserToken) name:@"getUserToken" object:nil];
+    
     viewControllerContainer = [[TempletView alloc] initWithFrame:self.view.bounds];
     [viewControllerContainer setBackgroundColor:AbsoluteWhite];
     [viewControllerContainer setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
@@ -39,8 +42,6 @@
     
     viewControllerArray = [[NSMutableArray alloc] init];
     [viewControllerArray addObject:currentViewController];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserToken) name:@"getUserToken" object:nil];
     
 }
 
@@ -157,14 +158,14 @@
     
 }
 
-- (void)GuestViewUpdateTitle:(NSString*)title
+- (void)GuestViewUpdateTitle:(NSString*)title andUrl:(NSString *)url
 {
-    [navi updateTitle:title];
+    [navi updateTitle:title andUrl:url];
 }
 
-- (void)weChatViewUpdateTitle:(NSString*)title
+- (void)weChatViewUpdateTitle:(NSString*)title andUrl:(NSString *)url
 {
-    [navi updateTitle:title];
+    [navi updateTitle:title andUrl:url];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -179,8 +180,90 @@
 
 - (void)navigationViewDidTapMemberButton;
 {
+    __weak typeof(self) weakSelf = self;
     
+    ZYShareItem *item0 = [ZYShareItem itemWithTitle:@"发送给朋友"
+                                               icon:@"Action_Share"
+                                            handler:^{ [weakSelf WXActionShare]; }];
+    
+    ZYShareItem *item1 = [ZYShareItem itemWithTitle:@"分享到朋友圈"
+                                               icon:@"Action_Moments"
+                                            handler:^{ [weakSelf WXActionMoments]; }];
+    
+    ZYShareItem *item2 = [ZYShareItem itemWithTitle:@"收藏"
+                                               icon:@"Action_MyFavAdd"
+                                            handler:^{ [weakSelf WXActionMyFavAdd]; }];
+    
+    
+    // 创建shareView
+    ZYShareView *shareView = [ZYShareView shareViewWithShareItems:@[item0, item1, item2]
+                                                    functionItems:nil];
+    // 弹出shareView
+    [shareView show];
 }
+
+- (void)WXActionShare{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = navi.title;
+    message.description = @"百联青浦奥莱官方App";
+    [message setThumbImage:[UIImage imageNamed:@"ShareIcon"]];
+    
+    WXWebpageObject *webpageObject = [WXWebpageObject object];
+    webpageObject.webpageUrl = navi.url;
+    message.mediaObject = webpageObject;
+    
+    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneSession;
+    
+    [WXApi sendReq:req];
+}
+
+- (void)WXActionMoments{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = navi.title;
+    message.description = @"百联青浦奥莱官方App";
+    [message setThumbImage:[UIImage imageNamed:@"ShareIcon"]];
+    
+    WXWebpageObject *webpageObject = [WXWebpageObject object];
+    webpageObject.webpageUrl = navi.url;
+    message.mediaObject = webpageObject;
+    
+    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;
+    
+    [WXApi sendReq:req];
+}
+
+- (void)WXActionMyFavAdd{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = navi.title;
+    message.description = @"百联青浦奥莱官方App";
+    [message setThumbImage:[UIImage imageNamed:@"ShareIcon"]];
+    
+    WXWebpageObject *webpageObject = [WXWebpageObject object];
+    webpageObject.webpageUrl = navi.url;
+    message.mediaObject = webpageObject;
+    
+    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneFavorite;
+    
+    [WXApi sendReq:req];
+}
+
+- (void)showTipViewWithMessage:(NSNotification *)notification {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:[notification object] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionConfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:actionConfirm];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 
 
 @end

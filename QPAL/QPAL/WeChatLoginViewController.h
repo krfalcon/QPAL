@@ -22,6 +22,6 @@
 
 @protocol WeChatLoginViewControllerDelegate <NSObject>
 
-- (void)weChatViewUpdateTitle:(NSString*)title;
+- (void)weChatViewUpdateTitle:(NSString*)title andUrl:(NSString*)url;
 
 @end
