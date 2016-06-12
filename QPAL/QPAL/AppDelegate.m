@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //向微信注册
-    [WXApi registerApp:WXPatient_App_ID withDescription:@"weixin"];
+    [WXApi registerApp:WXPatient_App_ID withDescription:@"bbb"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
@@ -88,7 +88,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserToken" object:nil];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登陆失败"
-                                                        message:@"请关注百联青浦奥莱微信公众号后登陆"
+                                                        message:@"请关注第一八佰伴微信公众号后登陆"
                                                        delegate:self
                                                cancelButtonTitle:@"好的"
                                               otherButtonTitles:nil, nil];

@@ -78,7 +78,7 @@
     if ([WXApi isWXAppInstalled]) {
         SendAuthReq *req = [[SendAuthReq alloc] init];
         req.scope = @"snsapi_userinfo";
-        req.state = @"App";
+        req.state = @"bbb_App";
         [WXApi sendReq:req];
     }
 }

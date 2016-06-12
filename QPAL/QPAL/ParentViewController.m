@@ -205,7 +205,7 @@
 - (void)WXActionShare{
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = navi.title;
-    message.description = @"百联青浦奥莱官方App";
+    message.description = @"第一八佰伴官方App";
     [message setThumbImage:[UIImage imageNamed:@"ShareIcon"]];
     
     WXWebpageObject *webpageObject = [WXWebpageObject object];
@@ -223,7 +223,7 @@
 - (void)WXActionMoments{
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = navi.title;
-    message.description = @"百联青浦奥莱官方App";
+    message.description = @"第一八佰伴官方App";
     [message setThumbImage:[UIImage imageNamed:@"ShareIcon"]];
     
     WXWebpageObject *webpageObject = [WXWebpageObject object];
@@ -241,7 +241,7 @@
 - (void)WXActionMyFavAdd{
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = navi.title;
-    message.description = @"百联青浦奥莱官方App";
+    message.description = @"第一八佰伴官方App";
     [message setThumbImage:[UIImage imageNamed:@"ShareIcon"]];
     
     WXWebpageObject *webpageObject = [WXWebpageObject object];

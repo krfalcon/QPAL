@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>百联青浦奥莱</string>
+	<string>第一八佰伴</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -29,7 +29,7 @@
 			<string>tencent</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx5977fde560a391fd</string>
+				<string>wx94ad1f365185b69f</string>
 			</array>
 		</dict>
 	</array>
