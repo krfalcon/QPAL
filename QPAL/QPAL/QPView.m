@@ -16,7 +16,7 @@
     [self addSubview:indexView];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:indexView.bounds];
-    [imageView setImage:[UIImage imageNamed:@"bg"]];
+    [imageView setImage:[UIImage imageNamed:@"bbb"]];
     [indexView addSubview:imageView];
     
     UIButton *guestButton = [[UIButton alloc] initWithFrame:CGRectMake(67.5 * self.scale, 400 * self.scale, 240 * self.scale, 40 * self.scale)];
