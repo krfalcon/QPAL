@@ -8,10 +8,13 @@
 
 #import "WeChatLoginViewController.h"
 
+
 @implementation WeChatLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.activityHUD = [CCActivityHUD new];
     
     [self.view setFrame:super.view.bounds];
     
@@ -25,10 +28,13 @@
     [request setValue:[NSString stringWithFormat:@"UserToken=%@",_userToken] forHTTPHeaderField:@"Cookie"];
     [webView loadRequest:request];
     
+    [self.activityHUD show];
+    
     [self.view addSubview:webView];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.activityHUD dismiss];
     
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     NSString *url = [webView stringByEvaluatingJavaScriptFromString:@"document.location.href"];

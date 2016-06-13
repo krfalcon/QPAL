@@ -11,6 +11,11 @@
 		312AEB521CE41F2F00EB828A /* TempletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB511CE41F2F00EB828A /* TempletView.m */; };
 		312AEB5C1CE424A100EB828A /* QPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB5B1CE424A100EB828A /* QPViewController.m */; };
 		312AEB5F1CE430E400EB828A /* GuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB5E1CE430E400EB828A /* GuestViewController.m */; };
+		313D78F21D0E53B400FEAA3D /* CCActivityHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 313D78EC1D0E53B400FEAA3D /* CCActivityHUD.m */; };
+		313D78F31D0E53B400FEAA3D /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 313D78ED1D0E53B400FEAA3D /* cross.png */; };
+		313D78F41D0E53B400FEAA3D /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 313D78EF1D0E53B400FEAA3D /* tick.png */; };
+		313D78F51D0E53B400FEAA3D /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 313D78F11D0E53B400FEAA3D /* UIImage+animatedGIF.m */; };
+		313D78F81D0E53E100FEAA3D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313D78F71D0E53E100FEAA3D /* ImageIO.framework */; };
 		3153FEAD1CE4788A001B2E5D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEAC1CE4788A001B2E5D /* libc++.tbd */; };
 		3153FEAF1CE47897001B2E5D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEAE1CE47897001B2E5D /* libz.tbd */; };
 		3153FEB11CE478AD001B2E5D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB01CE478AD001B2E5D /* CoreTelephony.framework */; };
@@ -61,6 +66,14 @@
 		312AEB5B1CE424A100EB828A /* QPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPViewController.m; sourceTree = "<group>"; };
 		312AEB5D1CE430E400EB828A /* GuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestViewController.h; sourceTree = "<group>"; };
 		312AEB5E1CE430E400EB828A /* GuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestViewController.m; sourceTree = "<group>"; };
+		313D78EB1D0E53B400FEAA3D /* CCActivityHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCActivityHUD.h; path = "../../../../../Downloads/CCActivityHUD-master/CCActivityHUD/CCActivityHUD.h"; sourceTree = "<group>"; };
+		313D78EC1D0E53B400FEAA3D /* CCActivityHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCActivityHUD.m; path = "../../../../../Downloads/CCActivityHUD-master/CCActivityHUD/CCActivityHUD.m"; sourceTree = "<group>"; };
+		313D78ED1D0E53B400FEAA3D /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = "../../../../../Downloads/CCActivityHUD-master/CCActivityHUD/cross.png"; sourceTree = "<group>"; };
+		313D78EE1D0E53B400FEAA3D /* Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Size.h; path = "../../../../../Downloads/CCActivityHUD-master/CCActivityHUD/Size.h"; sourceTree = "<group>"; };
+		313D78EF1D0E53B400FEAA3D /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tick.png; path = "../../../../../Downloads/CCActivityHUD-master/CCActivityHUD/tick.png"; sourceTree = "<group>"; };
+		313D78F01D0E53B400FEAA3D /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+animatedGIF.h"; path = "../../../../../Downloads/CCActivityHUD-master/CCActivityHUD/UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		313D78F11D0E53B400FEAA3D /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+animatedGIF.m"; path = "../../../../../Downloads/CCActivityHUD-master/CCActivityHUD/UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		313D78F71D0E53E100FEAA3D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3153FEAC1CE4788A001B2E5D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3153FEAE1CE47897001B2E5D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3153FEB01CE478AD001B2E5D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -112,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				313D78F81D0E53E100FEAA3D /* ImageIO.framework in Frameworks */,
 				6361D6A31CE4DB2800213ABE /* libWeChatSDK.a in Frameworks */,
 				3153FEB71CE478C6001B2E5D /* libsqlite3.tbd in Frameworks */,
 				3153FEB51CE478BD001B2E5D /* libsqlite3.0.tbd in Frameworks */,
@@ -170,6 +184,21 @@
 		312AEB561CE41F8900EB828A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				313D78F61D0E53BC00FEAA3D /* CCActivityHUD */,
+				313D78EA1D0E538700FEAA3D /* ShareView */,
+				635AEAFE1CE4D6F9000DC1A3 /* WechatAuthSDK.h */,
+				635AEAFF1CE4D6F9000DC1A3 /* WXApi.h */,
+				635AEB001CE4D6F9000DC1A3 /* WXApiObject.h */,
+				635AEAF51CE4D151000DC1A3 /* EnumHelper.h */,
+				635AEAF61CE4D179000DC1A3 /* ScreenHelper.h */,
+				635AEAF71CE4D189000DC1A3 /* WsAddrHelper.h */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		313D78EA1D0E538700FEAA3D /* ShareView */ = {
+			isa = PBXGroup;
+			children = (
 				31AE5C961CED9BE500072CF0 /* ZYShareItem.h */,
 				31AE5C971CED9BE500072CF0 /* ZYShareItem.m */,
 				31AE5C981CED9BE500072CF0 /* ZYShareItemCell.h */,
@@ -181,19 +210,28 @@
 				31AE5C9E1CED9BE500072CF0 /* ZYShareView.h */,
 				31AE5C9F1CED9BE500072CF0 /* ZYShareView.m */,
 				31AE5CA01CED9BE500072CF0 /* ZYShareViewDefine.h */,
-				635AEAFE1CE4D6F9000DC1A3 /* WechatAuthSDK.h */,
-				635AEAFF1CE4D6F9000DC1A3 /* WXApi.h */,
-				635AEB001CE4D6F9000DC1A3 /* WXApiObject.h */,
-				635AEAF51CE4D151000DC1A3 /* EnumHelper.h */,
-				635AEAF61CE4D179000DC1A3 /* ScreenHelper.h */,
-				635AEAF71CE4D189000DC1A3 /* WsAddrHelper.h */,
 			);
-			name = Tools;
+			name = ShareView;
+			sourceTree = "<group>";
+		};
+		313D78F61D0E53BC00FEAA3D /* CCActivityHUD */ = {
+			isa = PBXGroup;
+			children = (
+				313D78EB1D0E53B400FEAA3D /* CCActivityHUD.h */,
+				313D78EC1D0E53B400FEAA3D /* CCActivityHUD.m */,
+				313D78ED1D0E53B400FEAA3D /* cross.png */,
+				313D78EE1D0E53B400FEAA3D /* Size.h */,
+				313D78EF1D0E53B400FEAA3D /* tick.png */,
+				313D78F01D0E53B400FEAA3D /* UIImage+animatedGIF.h */,
+				313D78F11D0E53B400FEAA3D /* UIImage+animatedGIF.m */,
+			);
+			name = CCActivityHUD;
 			sourceTree = "<group>";
 		};
 		3153FE911CE46C92001B2E5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				313D78F71D0E53E100FEAA3D /* ImageIO.framework */,
 				6361D6A21CE4DB2800213ABE /* libWeChatSDK.a */,
 				3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */,
 				3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */,
@@ -373,7 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				631FA9701CE2334D008C31D0 /* Assets.xcassets in Resources */,
+				313D78F41D0E53B400FEAA3D /* tick.png in Resources */,
 				31BA27DE1CE9B5CA00E13B20 /* Images.xcassets in Resources */,
+				313D78F31D0E53B400FEAA3D /* cross.png in Resources */,
 				31BB852A1CE9BF2F00DC3AB3 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +443,8 @@
 				312AEB521CE41F2F00EB828A /* TempletView.m in Sources */,
 				631FA96B1CE2334D008C31D0 /* ParentViewController.m in Sources */,
 				312AEB471CE41D0600EB828A /* QPView.m in Sources */,
+				313D78F21D0E53B400FEAA3D /* CCActivityHUD.m in Sources */,
+				313D78F51D0E53B400FEAA3D /* UIImage+animatedGIF.m in Sources */,
 				31E7552C1CE5AD5A00E81A2F /* WeChatLoginViewController.m in Sources */,
 				31AE5CA51CED9BE500072CF0 /* ZYShareView.m in Sources */,
 				31AE5CA11CED9BE500072CF0 /* ZYShareItem.m in Sources */,
