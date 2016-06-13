@@ -34,11 +34,13 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [WXApi handleOpenURL:url delegate:self];
+    
     return YES;
 }
 
 - (void)onResp:(BaseResp *)resp {
     // 向微信请求授权后,得到响应结果
+    
     if ([resp isKindOfClass:[SendAuthResp class]]) {
         SendAuthResp *temp = (SendAuthResp *)resp;
         if (temp.code) {

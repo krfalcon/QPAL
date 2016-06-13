@@ -8,10 +8,13 @@
 
 #import "GuestViewController.h"
 
+
 @implementation GuestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.activityHUD = [CCActivityHUD new];
     
     [self.view setFrame:super.view.bounds];
 
@@ -24,11 +27,13 @@
     [request setHTTPShouldHandleCookies:NO];
     //[request setValue:[NSString stringWithFormat:@"UserToken=e3ebc8d2-0f06-44a8-b6de-4bcffe404d5e"] forHTTPHeaderField:@"Cookie"];
     [_webView loadRequest:request];
+    [self.activityHUD show];
     
     [self.view addSubview:_webView];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.activityHUD dismiss];
 
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     NSString *url = [webView stringByEvaluatingJavaScriptFromString:@"document.location.href"];

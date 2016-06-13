@@ -20,6 +20,8 @@
 #import "ZYShareView.h"
 #import "WXApi.h"
 
+#import "CCActivityHUD.h"
+
 
 @interface ParentViewController : UIViewController<QPViewControllerDelegate,NavigationViewDelegate,GuestViewControllerDelegate,WeChatLoginViewControllerDelegate>
 {
@@ -32,6 +34,8 @@
     UIViewController        *nextViewController;
 
 }
+
+@property (strong, nonatomic) CCActivityHUD *activityHUD;
 
 
 @end

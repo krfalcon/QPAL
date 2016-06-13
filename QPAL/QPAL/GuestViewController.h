@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "WsAddrHelper.h"
 
+#import "CCActivityHUD.h"
+
 
 @protocol GuestViewControllerDelegate;
 
@@ -16,6 +18,8 @@
 
 @property (strong, nonatomic) UIWebView*    webView;
 @property (weak, nonatomic)  id<GuestViewControllerDelegate>      delegate;
+
+@property (strong, nonatomic) CCActivityHUD *activityHUD;
 
 @end
 
