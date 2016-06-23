@@ -15,8 +15,9 @@
 #import "QPViewController.h"
 #import "GuestViewController.h"
 #import "WeChatLoginViewController.h"
-#import "NavigationView.h"
+#import "MapViewController.h"
 
+#import "NavigationView.h"
 #import "ZYShareView.h"
 #import "WXApi.h"
 

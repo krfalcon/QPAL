@@ -87,6 +87,17 @@
             break;
         }
             
+        case ViewControllerTypeMap:
+        {
+            MapViewController *mapViewController = [[MapViewController alloc] init];
+            
+            [navi createNextNavigationBarWithColor:ThemeBlack andTitle:@"地图" andIsIndex:NO];
+            
+            nextViewController = mapViewController;
+            
+            break;
+        }
+            
         default:
             break;
     }
@@ -194,10 +205,14 @@
                                                icon:@"Action_MyFavAdd"
                                             handler:^{ [weakSelf WXActionMyFavAdd]; }];
     
+    ZYShareItem *item3 = [ZYShareItem itemWithTitle:@"地图"
+                                               icon:@"Action_Map"
+                                            handler:^{ [weakSelf WXActionMap]; }];
+    
     
     // 创建shareView
     ZYShareView *shareView = [ZYShareView shareViewWithShareItems:@[item0, item1, item2]
-                                                    functionItems:nil];
+                                                    functionItems:@[item3]];
     // 弹出shareView
     [shareView show];
 }
@@ -254,6 +269,10 @@
     req.scene = WXSceneFavorite;
     
     [WXApi sendReq:req];
+}
+
+- (void)WXActionMap{
+    [self pushViewControllerWithViewControllerType:ViewControllerTypeMap andToken:nil];
 }
 
 - (void)showTipViewWithMessage:(NSNotification *)notification {

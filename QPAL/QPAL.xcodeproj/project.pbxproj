@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311B46EA1D1BC62F003997D7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311B46E91D1BC62F003997D7 /* MapViewController.m */; };
+		311B46ED1D1BC64D003997D7 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311B46EC1D1BC64D003997D7 /* MapView.m */; };
 		312AEB471CE41D0600EB828A /* QPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB461CE41D0600EB828A /* QPView.m */; };
 		312AEB521CE41F2F00EB828A /* TempletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB511CE41F2F00EB828A /* TempletView.m */; };
 		312AEB5C1CE424A100EB828A /* QPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB5B1CE424A100EB828A /* QPViewController.m */; };
@@ -58,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		311B46E81D1BC62F003997D7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		311B46E91D1BC62F003997D7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		311B46EB1D1BC64D003997D7 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		311B46EC1D1BC64D003997D7 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		312AEB451CE41D0600EB828A /* QPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPView.h; sourceTree = "<group>"; };
 		312AEB461CE41D0600EB828A /* QPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPView.m; sourceTree = "<group>"; };
 		312AEB501CE41F2F00EB828A /* TempletView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempletView.h; sourceTree = "<group>"; };
@@ -162,6 +168,8 @@
 				312AEB511CE41F2F00EB828A /* TempletView.m */,
 				635AEAF21CE4D0DF000DC1A3 /* NavigationView.h */,
 				635AEAF31CE4D0DF000DC1A3 /* NavigationView.m */,
+				311B46EB1D1BC64D003997D7 /* MapView.h */,
+				311B46EC1D1BC64D003997D7 /* MapView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -177,6 +185,8 @@
 				312AEB5E1CE430E400EB828A /* GuestViewController.m */,
 				31E7552A1CE5AD5A00E81A2F /* WeChatLoginViewController.h */,
 				31E7552B1CE5AD5A00E81A2F /* WeChatLoginViewController.m */,
+				311B46E81D1BC62F003997D7 /* MapViewController.h */,
+				311B46E91D1BC62F003997D7 /* MapViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -446,6 +456,7 @@
 				313D78F21D0E53B400FEAA3D /* CCActivityHUD.m in Sources */,
 				313D78F51D0E53B400FEAA3D /* UIImage+animatedGIF.m in Sources */,
 				31E7552C1CE5AD5A00E81A2F /* WeChatLoginViewController.m in Sources */,
+				311B46ED1D1BC64D003997D7 /* MapView.m in Sources */,
 				31AE5CA51CED9BE500072CF0 /* ZYShareView.m in Sources */,
 				31AE5CA11CED9BE500072CF0 /* ZYShareItem.m in Sources */,
 				31AE5CA21CED9BE500072CF0 /* ZYShareItemCell.m in Sources */,
@@ -454,6 +465,7 @@
 				31AE5CA31CED9BE500072CF0 /* ZYShareSheetCell.m in Sources */,
 				635AEAF41CE4D0DF000DC1A3 /* NavigationView.m in Sources */,
 				631FA9651CE2334D008C31D0 /* main.m in Sources */,
+				311B46EA1D1BC62F003997D7 /* MapViewController.m in Sources */,
 				312AEB5F1CE430E400EB828A /* GuestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
