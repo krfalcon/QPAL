@@ -16,7 +16,7 @@
     locationView = [[UIView alloc ] initWithFrame:CGRectMake(0, self.titleHeight * self.frame.size.width / 375.f, self.frame.size.width, self.frame.size.height - self.titleHeight * self.frame.size.width / 375.f)];
     [self addSubview:locationView];
     
-    mapImageView = [[UIImageView alloc] initWithFrame:locationView.bounds];
+    mapImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, self.titleHeight * self.frame.size.width / 375.f, self.frame.size.width - 20, (self.frame.size.width - 20 ) * 7117/2835)];
     [mapImageView setImage:[UIImage imageNamed:@"Map"]];
     
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchView:)];
