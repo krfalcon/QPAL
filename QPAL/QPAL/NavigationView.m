@@ -142,7 +142,7 @@
 - (void)createBeforeNavigationBar {
     navigationBarNew = [navigationBarArray objectAtIndex:(navigationBarArray.count - 2)];
     self.backgroundColor = navigationBarNew.barTintColor;
-    [self insertSubview:navigationBarNew belowSubview:[self viewWithTag:11]];
+    [self addSubview:navigationBarNew];
     //NSLog(@"%@",  navigationBarNew);
     _hasNew = YES;
 }
@@ -150,7 +150,7 @@
 - (void)createFirstNavigationBar {
     navigationBarNew = [navigationBarArray firstObject];
     self.backgroundColor = navigationBarNew.barTintColor;
-    [self insertSubview:navigationBarNew belowSubview:[self viewWithTag:11]];
+    [self addSubview:navigationBarNew];
     
     int count = (int)navigationBarArray.count - 1;
     for (int i = 1; i < count; i++) {
