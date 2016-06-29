@@ -129,20 +129,13 @@
         [memberImage setImage:[UIImage imageNamed:@"NaviMember"]];
         [member addSubview:memberImage];
     }
-    
-    //    UIButton *member = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 60, 20, 60, 44)];
-    //    [member addTarget:self action:@selector(tappedMemberButton) forControlEvents:UIControlEventTouchUpInside];
-    //    [navigationBarNew addSubview:member];
-    //
-    //    UIImageView *memberImage = [[UIImageView alloc] initWithFrame:CGRectMake(25, 7, 30, 30)];
-    //    [memberImage setImage:[UIImage imageNamed:@"NaviMember"]];
-    //    [member addSubview:memberImage];
 }
 
 - (void)createBeforeNavigationBar {
     navigationBarNew = [navigationBarArray objectAtIndex:(navigationBarArray.count - 2)];
     self.backgroundColor = navigationBarNew.barTintColor;
-    [self insertSubview:navigationBarNew belowSubview:[self viewWithTag:11]];
+    [self addSubview:navigationBarNew];
+    
     //NSLog(@"%@",  navigationBarNew);
     _hasNew = YES;
 }
@@ -150,7 +143,7 @@
 - (void)createFirstNavigationBar {
     navigationBarNew = [navigationBarArray firstObject];
     self.backgroundColor = navigationBarNew.barTintColor;
-    [self insertSubview:navigationBarNew belowSubview:[self viewWithTag:11]];
+    [self addSubview:navigationBarNew];
     
     int count = (int)navigationBarArray.count - 1;
     for (int i = 1; i < count; i++) {
