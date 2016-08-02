@@ -30,9 +30,11 @@
     [viewControllerContainer setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
     [self.view addSubview:viewControllerContainer];
     
+    /*
     navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:3 andTitle:@"登陆"];
     [navi setDelegate:self];
     [self.view addSubview:navi];
+    */
     
     QPViewController *qpViewController = [[QPViewController alloc] init];
     [qpViewController setDelegate:self];
@@ -54,6 +56,10 @@
 
 - (void)pushViewControllerWithViewControllerType:(ViewControllerType)viewControllerType andToken:(NSString *)string
 {
+    navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:3 andTitle:@""];
+    [navi setDelegate:self];
+    [self.view addSubview:navi];
+    
     switch (viewControllerType) {
         case ViewControllerTypeGuest:
         {
@@ -130,8 +136,10 @@
             [weChatViewController.webView goBack];
         }
         else {
-                [self popViewController];
-                }
+            [navi removeFromSuperview];
+            
+            [self popViewController];
+            }
     
 }
 

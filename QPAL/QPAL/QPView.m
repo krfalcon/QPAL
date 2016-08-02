@@ -12,35 +12,37 @@
 
 - (void)initView
 {
-    UIView *indexView = [[UIView alloc] initWithFrame:CGRectMake(0, self.titleHeight, self.frame.size.width, self.frame.size.height - self.titleHeight)];
+    UIView *indexView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     [self addSubview:indexView];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:indexView.bounds];
     [imageView setImage:[UIImage imageNamed:@"bg"]];
     [indexView addSubview:imageView];
     
-    UIButton *guestButton = [[UIButton alloc] initWithFrame:CGRectMake(67.5 * self.scale, 400 * self.scale, 240 * self.scale, 40 * self.scale)];
+    UIButton *guestButton = [[UIButton alloc] initWithFrame:CGRectMake(22.5 * self.scale, 331 * self.scale, 659/2 * self.scale, 54 * self.scale)];
     [guestButton setTag:0];
     [guestButton setExclusiveTouch:YES];
     [guestButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [indexView addSubview:guestButton];
     
+    /*
     UIImageView *guestLogin = [[UIImageView alloc] initWithFrame:guestButton.bounds];
     [guestLogin setImage:[UIImage imageNamed:@"btn-youke"]];
     [guestButton addSubview:guestLogin];
-    
+    */
     
     if ([WXApi isWXAppInstalled])
     {
-        UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(67.5 * self.scale, 470 *    self.scale, 240 * self.scale, 40 * self.scale)];
+        UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(27 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];
         [weChatButton setTag:1];
         [weChatButton setExclusiveTouch:YES];
         [weChatButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [indexView addSubview:weChatButton];
-    
+        
+        /*
         UIImageView *weChatLogin = [[UIImageView alloc] initWithFrame:weChatButton.bounds];
         [weChatLogin setImage:[UIImage imageNamed:@"btn-weixin"]];
-        [weChatButton addSubview:weChatLogin];
+        [weChatButton addSubview:weChatLogin];*/
     }
 }
 
