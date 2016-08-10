@@ -13,7 +13,13 @@
 
 @protocol QPViewDelegate;
 
-@interface QPView : TempletView
+@interface QPView : TempletView <UITextFieldDelegate>
+{
+    UITextField*            phoneTextField;
+    UITextField*            securityCodeTextField;
+    
+    UIButton*               endTextingButton;
+}
 
 @property (strong, nonatomic) id<QPViewDelegate>     delegate;
 

@@ -31,7 +31,7 @@
     return YES;
 }
 
-
+#pragma mark - WeChat
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [WXApi handleOpenURL:url delegate:self];
     
@@ -52,17 +52,19 @@
         NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         
         NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
-        //NSLog(@"%@", resDic);
+        NSLog(@"%@", resDic);
         NSString *accessToken = [resDic objectForKey:@"access_token"];
         NSString *unionID = [resDic objectForKey:@"unionid"];
+        NSString *openID = [resDic objectForKey:@"openid"];
         
         NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
         [defalts setObject:unionID forKey:@"unionid"];
         [defalts setObject:accessToken forKey:@"access_token"];
+        [defalts setObject:openID forKey:@"openid"];
         
         [defalts synchronize];
         
-        [self getUserTokenWithUnionID:unionID];
+        [self getUserInfoWithOpenID:openID andAccessToken:accessToken];
         } else {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldShowTip" object:@"微信授权失败！"];
         }
@@ -70,9 +72,28 @@
     }
 }
 
-- (void)getUserTokenWithUnionID:(NSString *)string {
+- (void)getUserInfoWithOpenID:(NSString *)openID andAccessToken:(NSString *)accessToken{
     NSError *error;
-    NSString *accessUrlStr = [NSString stringWithFormat:@"%@%@", WXAPI, string];
+    NSString *accessUrlStr = [NSString stringWithFormat:@"%@/userinfo?access_token=%@&openid=%@", WX_BASE_URL, accessToken, openID];
+    NSURL *url = [NSURL URLWithString:accessUrlStr];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+    NSLog(@"%@",resDic);
+    NSString *nickName = [resDic objectForKey:@"nickname"];
+    NSString *headImgUrl = [resDic objectForKey:@"headimgurl"];
+    
+    [self WXgetUserTokenWithNickName:nickName HeadImgUrl:headImgUrl Code:openID ];
+    
+    
+}
+
+- (void)WXgetUserTokenWithNickName:(NSString *)nickname
+                        HeadImgUrl:(NSString *)headimgurl
+                        Code:(NSString *)code {
+    NSError *error;
+    NSString *accessUrlStr = [NSString stringWithFormat:@"http://sw.dgshare.cn/crm/BindCustomer?Nickname=%@&HeadImgUrl=%@&Code=%@&From=wx", nickname, headimgurl, code];
     NSURL *url = [NSURL URLWithString:accessUrlStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -81,16 +102,16 @@
     NSLog(@"%@", resDic);
     //NSString *userToken = [[resDic objectForKey:@"c"] objectForKey:@"Token"];
     if (resDic[@"c"] != [NSNull null]) {
-        NSString *userToken = [NSString stringWithFormat:@"%@",resDic[@"c"][@"Token"]];
-        
+        NSString *userToken = [NSString stringWithFormat:@"%@",resDic[@"Customer"][@"Token"]];
+        NSLog(@"%@",userToken);
         NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
         [defalts setObject:userToken forKey:@"userToken"];
         
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserToken" object:nil];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登陆失败"
-                                                        message:@"请关注百联青浦奥莱微信公众号后登陆"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"登陆失败"
                                                        delegate:self
                                                cancelButtonTitle:@"好的"
                                               otherButtonTitles:nil, nil];
@@ -102,6 +123,11 @@
     
 }
 
+#pragma mark - QQ
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [TencentOAuth HandleOpenURL:url];
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

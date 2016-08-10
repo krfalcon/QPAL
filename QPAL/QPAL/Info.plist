@@ -29,7 +29,17 @@
 			<string>tencent</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx5977fde560a391fd</string>
+				<string>wx3d3e9e061ac56d63</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>tencentopenapi</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tencent1105514703</string>
 			</array>
 		</dict>
 	</array>

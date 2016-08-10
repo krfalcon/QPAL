@@ -152,7 +152,7 @@
     }
 
     
-    [UIView animateWithDuration:0.4f
+    [UIView animateWithDuration:0.f
                           delay:0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{

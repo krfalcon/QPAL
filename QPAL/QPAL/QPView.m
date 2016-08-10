@@ -25,6 +25,31 @@
     [guestButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [indexView addSubview:guestButton];
     
+    endTextingButton = [[UIButton alloc] initWithFrame:self.bounds];
+    [endTextingButton setEnabled:NO];
+    [endTextingButton setExclusiveTouch:YES];
+    [endTextingButton addTarget:self action:@selector(textFieldShouldReturn:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:endTextingButton];
+    
+    phoneTextField = [[UITextField alloc ] initWithFrame:CGRectMake(45 * self.scale, 193 * self.scale, 200 * self.scale, 35 * self.scale)];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"请输入手机号码" attributes:@{ NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [phoneTextField setAttributedPlaceholder:str];
+    [phoneTextField setFont:[UIFont systemFontOfSize:18 * self.scale]];
+    [phoneTextField setDelegate:self];
+    [phoneTextField setReturnKeyType:UIReturnKeyDone];
+    [phoneTextField setKeyboardType:UIKeyboardTypeNumberPad];
+    [phoneTextField setTextColor:[UIColor whiteColor]];
+    [indexView addSubview: phoneTextField];
+    
+    securityCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(45 * self.scale, 250 * self.scale, 200 * self.scale, 35 * self.scale)];
+    NSAttributedString *str2 = [[NSAttributedString alloc] initWithString:@"请输入6位验证码" attributes:@{ NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [securityCodeTextField setAttributedPlaceholder:str2];
+    [securityCodeTextField setFont:[UIFont systemFontOfSize:18 * self.scale]];
+    [securityCodeTextField setDelegate:self];
+    [securityCodeTextField setReturnKeyType:UIReturnKeyDone];
+    [securityCodeTextField setKeyboardType:UIKeyboardTypeNumberPad];
+    [securityCodeTextField setTextColor:[UIColor whiteColor]];
+    [indexView addSubview: securityCodeTextField];
     /*
     UIImageView *guestLogin = [[UIImageView alloc] initWithFrame:guestButton.bounds];
     [guestLogin setImage:[UIImage imageNamed:@"btn-youke"]];
@@ -44,6 +69,12 @@
         [weChatLogin setImage:[UIImage imageNamed:@"btn-weixin"]];
         [weChatButton addSubview:weChatLogin];*/
     }
+    
+    UIButton *qqButton = [[UIButton alloc] initWithFrame:CGRectMake(113 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];
+    [qqButton setTag:2];
+    [qqButton setExclusiveTouch:YES];
+    [qqButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [indexView addSubview:qqButton];
 }
 
 #pragma mark - Button Events
@@ -71,6 +102,14 @@
             }
             break;
         }
+            
+        case 2:
+        {
+            
+            [self wechatLogin];
+            
+            break;
+        }
         default:
             break;
     }
@@ -83,6 +122,32 @@
         req.state = @"App";
         [WXApi sendReq:req];
     }
+}
+
+- (void)QQLogin {
+    if ([WXApi isWXAppInstalled]) {
+        SendAuthReq *req = [[SendAuthReq alloc] init];
+        req.scope = @"snsapi_userinfo";
+        req.state = @"App";
+        [WXApi sendReq:req];
+    }
+}
+
+#pragma mark - TextField Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [phoneTextField resignFirstResponder];
+    [securityCodeTextField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [endTextingButton setEnabled:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [endTextingButton setEnabled:NO];
 }
 
 @end
