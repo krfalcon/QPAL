@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ParentViewController.h"
 #import "WXApi.h"
-#import "TencentOAuth.h"
 
 #import "WsAddrHelper.h"
 
