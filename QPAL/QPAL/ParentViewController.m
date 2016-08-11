@@ -35,15 +35,41 @@
     [navi setDelegate:self];
     [self.view addSubview:navi];
     */
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *userToken = [defaults objectForKey:@"userToken"];
     
-    QPViewController *qpViewController = [[QPViewController alloc] init];
-    [qpViewController setDelegate:self];
-    [viewControllerContainer addSubview:qpViewController.view];
+    if (userToken) {
+        /*
+        navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:3 andTitle:@""];
+        [navi setDelegate:self];
+        [self.view addSubview:navi];
+        
+        weChatViewController = [[WeChatLoginViewController alloc] init];
+        [weChatViewController setDelegate:self];
+        
+        weChatViewController.userToken = userToken;
+        
+        [navi createNextNavigationBarWithColor:ThemeBlack andTitle:@"" andIsIndex:NO];
+        
+        */
+        [self pushViewControllerWithViewControllerType:ViewControllerTypeWeChat andToken:userToken];
+        
+        [viewControllerContainer addSubview:weChatViewController.view];
+        
+        //currentViewController = weChatViewController;
+        
+    } else {
+        QPViewController *qpViewController = [[QPViewController alloc] init];
+        [qpViewController setDelegate:self];
+        [viewControllerContainer addSubview:qpViewController.view];
     
-    currentViewController = qpViewController;
+        currentViewController = qpViewController;
+        
+        viewControllerArray = [[NSMutableArray alloc] init];
+        [viewControllerArray addObject:currentViewController];
+        }
     
-    viewControllerArray = [[NSMutableArray alloc] init];
-    [viewControllerArray addObject:currentViewController];
+    
     
 }
 
@@ -135,11 +161,11 @@
         }  else if (weChatViewController.webView.canGoBack) {
             [weChatViewController.webView goBack];
         }
-        else {
+        /*else {
             [navi removeFromSuperview];
             
             [self popViewController];
-            }
+            }*/
     
 }
 
@@ -213,14 +239,14 @@
                                                icon:@"Action_MyFavAdd"
                                             handler:^{ [weakSelf WXActionMyFavAdd]; }];
     
-    ZYShareItem *item3 = [ZYShareItem itemWithTitle:@"地图"
+    /*ZYShareItem *item3 = [ZYShareItem itemWithTitle:@"地图"
                                                icon:@"Action_Map"
-                                            handler:^{ [weakSelf WXActionMap]; }];
+                                            handler:^{ [weakSelf WXActionMap]; }];*/
     
     
     // 创建shareView
     ZYShareView *shareView = [ZYShareView shareViewWithShareItems:@[item0, item1, item2]
-                                                    functionItems:@[item3]];
+                                                    functionItems:nil];
     // 弹出shareView
     [shareView show];
 }

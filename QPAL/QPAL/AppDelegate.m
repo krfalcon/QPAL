@@ -103,7 +103,7 @@
     //NSString *userToken = [[resDic objectForKey:@"c"] objectForKey:@"Token"];
     if (resDic[@"c"] != [NSNull null]) {
         NSString *userToken = [NSString stringWithFormat:@"%@",resDic[@"Customer"][@"Token"]];
-        NSLog(@"%@",userToken);
+        //NSLog(@"%@",userToken);
         NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
         [defalts setObject:userToken forKey:@"userToken"];
         
