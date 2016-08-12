@@ -58,7 +58,7 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "492590167.389797"
+                  timestampString = "492673128.293876"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -73,7 +73,7 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "492590167.389991"
+                  timestampString = "492673128.294895"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -142,6 +142,22 @@
             startingLineNumber = "14"
             endingLineNumber = "14"
             landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/AppDelegate.m"
+            timestampString = "492681456.208271"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-WXgetUserTokenWithNickName:HeadImgUrl:Code:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

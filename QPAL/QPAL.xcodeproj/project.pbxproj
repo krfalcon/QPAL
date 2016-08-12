@@ -28,6 +28,7 @@
 		3153FEB31CE478B3001B2E5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */; };
 		3153FEB51CE478BD001B2E5D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */; };
 		3153FEB71CE478C6001B2E5D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */; };
+		319833CC1D5DB8C300FF5B22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319833CB1D5DB8C300FF5B22 /* CoreLocation.framework */; };
 		31AE5CA11CED9BE500072CF0 /* ZYShareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C971CED9BE500072CF0 /* ZYShareItem.m */; };
 		31AE5CA21CED9BE500072CF0 /* ZYShareItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C991CED9BE500072CF0 /* ZYShareItemCell.m */; };
 		31AE5CA31CED9BE500072CF0 /* ZYShareSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C9B1CED9BE500072CF0 /* ZYShareSheetCell.m */; };
@@ -94,6 +95,7 @@
 		3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		319833CB1D5DB8C300FF5B22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		31AE5C961CED9BE500072CF0 /* ZYShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareItem.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItem.h"; sourceTree = "<group>"; };
 		31AE5C971CED9BE500072CF0 /* ZYShareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYShareItem.m; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItem.m"; sourceTree = "<group>"; };
 		31AE5C981CED9BE500072CF0 /* ZYShareItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareItemCell.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItemCell.h"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319833CC1D5DB8C300FF5B22 /* CoreLocation.framework in Frameworks */,
 				3153FEAF1CE47897001B2E5D /* libz.tbd in Frameworks */,
 				31014A491D5B216D00A729F6 /* libstdc++.tbd in Frameworks */,
 				31014A471D5B215100A729F6 /* libiconv.tbd in Frameworks */,
@@ -269,6 +272,7 @@
 		3153FE911CE46C92001B2E5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				319833CB1D5DB8C300FF5B22 /* CoreLocation.framework */,
 				31014A481D5B216D00A729F6 /* libstdc++.tbd */,
 				31014A461D5B215100A729F6 /* libiconv.tbd */,
 				31014A441D5B214000A729F6 /* CoreGraphics.framework */,
@@ -416,6 +420,7 @@
 				TargetAttributes = {
 					631FA95F1CE2334D008C31D0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = W7UK99CA3L;
 					};
 					631FA9781CE2334D008C31D0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -555,6 +560,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -605,6 +611,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -635,11 +642,12 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = QPAL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = Kdx.QPOutlets;
+				PRODUCT_BUNDLE_IDENTIFIER = Kdc.SW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -652,11 +660,12 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = QPAL/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = Kdx.QPOutlets;
+				PRODUCT_BUNDLE_IDENTIFIER = Kdc.SW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";

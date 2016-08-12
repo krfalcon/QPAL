@@ -30,12 +30,12 @@
     [guestButton setExclusiveTouch:YES];
     [guestButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [indexView addSubview:guestButton];
-    /*
+    
     endTextingButton = [[UIButton alloc] initWithFrame:self.bounds];
     [endTextingButton setEnabled:NO];
     [endTextingButton setExclusiveTouch:YES];
     [endTextingButton addTarget:self action:@selector(textFieldShouldReturn:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:endTextingButton];*/
+    [self addSubview:endTextingButton];
     
     phoneTextField = [[UITextField alloc ] initWithFrame:CGRectMake(45 * self.scale, 193 * self.scale, 200 * self.scale, 35 * self.scale)];
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"请输入手机号码" attributes:@{ NSForegroundColorAttributeName:[UIColor whiteColor]}];

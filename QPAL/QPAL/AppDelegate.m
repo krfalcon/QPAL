@@ -18,6 +18,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    if(_locationManager==nil) {
+        
+        _locationManager= [[CLLocationManager alloc]init];
+        
+        _locationManager.delegate=self;
+        
+        _locationManager.distanceFilter=500;//定位 频率
+        
+        if([[[UIDevice currentDevice]systemVersion]doubleValue]>=8.0) {
+            
+            [_locationManager requestAlwaysAuthorization];
+            
+        }else
+            
+            [_locationManager requestWhenInUseAuthorization];
+        
+    }
+    
+    [_locationManager startUpdatingLocation];
     //向微信注册
     [WXApi registerApp:WXPatient_App_ID withDescription:@"weixin"];
     
@@ -94,12 +113,14 @@
                         Code:(NSString *)code {
     NSError *error;
     NSString *accessUrlStr = [NSString stringWithFormat:@"http://sw.dgshare.cn/crm/BindCustomer?Nickname=%@&HeadImgUrl=%@&Code=%@&From=wx", nickname, headimgurl, code];
+    NSLog(@"%@",accessUrlStr);
+    accessUrlStr = [accessUrlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:accessUrlStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
-    NSLog(@"%@", resDic);
+    //NSLog(@"%@", resDic);
     //NSString *userToken = [[resDic objectForKey:@"c"] objectForKey:@"Token"];
     if (resDic[@"c"] != [NSNull null]) {
         NSString *userToken = [NSString stringWithFormat:@"%@",resDic[@"Customer"][@"Token"]];
