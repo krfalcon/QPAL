@@ -58,7 +58,7 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "492673128.293876"
+                  timestampString = "492944370.194101"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -73,7 +73,7 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "492673128.294895"
+                  timestampString = "492944370.194255"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QPAL/WeChatLoginViewController.m"
-            timestampString = "492588564.980509"
+            timestampString = "492944781.192218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -151,13 +151,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QPAL/AppDelegate.m"
-            timestampString = "492681456.208271"
+            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
+            timestampString = "492944370.142908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-WXgetUserTokenWithNickName:HeadImgUrl:Code:"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-initWithFrame:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
+            timestampString = "492944370.142908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-initWithFrame:usingUIWebView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
+            timestampString = "492944370.142908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-_initMyself"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
+            timestampString = "492944370.142908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-initWKWebView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

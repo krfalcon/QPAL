@@ -12,16 +12,12 @@
 
 #import "WsAddrHelper.h"
 
-#import <CoreLocation/CoreLocation.h>
 
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate,CLLocationManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UINavigationController *navController;
-
-@property (nonatomic, strong) CLLocationManager *locationManager;
 
 
 @end

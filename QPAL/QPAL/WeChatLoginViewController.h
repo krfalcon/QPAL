@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import "WsAddrHelper.h"
 #import "CCActivityHUD.h"
+#import "IMYWebView.h"
+
 
 
 @protocol WeChatLoginViewControllerDelegate;
@@ -16,7 +19,7 @@
 @interface WeChatLoginViewController : UIViewController
 
 @property (strong, nonatomic) NSString*     userToken;
-@property (strong, nonatomic) UIWebView*    webView;
+@property (strong, nonatomic) IMYWebView*    webView;
 @property (weak, nonatomic)  id<WeChatLoginViewControllerDelegate>      delegate;
 
 @property (strong, nonatomic) CCActivityHUD *activityHUD;

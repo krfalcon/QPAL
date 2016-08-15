@@ -28,6 +28,10 @@
 		3153FEB31CE478B3001B2E5D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */; };
 		3153FEB51CE478BD001B2E5D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */; };
 		3153FEB71CE478C6001B2E5D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */; };
+		317C1E401D618A2C00921909 /* IMYWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 317C1E3A1D618A2C00921909 /* IMYWebView.m */; };
+		317C1E411D618A2C00921909 /* IMY_NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 317C1E3D1D618A2C00921909 /* IMY_NJKWebViewProgress.m */; };
+		317C1E421D618A2C00921909 /* WYWeakScriptMessageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 317C1E3F1D618A2C00921909 /* WYWeakScriptMessageDelegate.m */; };
+		317C1E441D618E4B00921909 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317C1E431D618E4B00921909 /* WebKit.framework */; };
 		319833CC1D5DB8C300FF5B22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319833CB1D5DB8C300FF5B22 /* CoreLocation.framework */; };
 		31AE5CA11CED9BE500072CF0 /* ZYShareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C971CED9BE500072CF0 /* ZYShareItem.m */; };
 		31AE5CA21CED9BE500072CF0 /* ZYShareItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AE5C991CED9BE500072CF0 /* ZYShareItemCell.m */; };
@@ -95,6 +99,13 @@
 		3153FEB21CE478B3001B2E5D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3153FEB41CE478BD001B2E5D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		3153FEB61CE478C6001B2E5D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		317C1E391D618A2C00921909 /* IMYWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMYWebView.h; sourceTree = "<group>"; };
+		317C1E3A1D618A2C00921909 /* IMYWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMYWebView.m; sourceTree = "<group>"; };
+		317C1E3C1D618A2C00921909 /* IMY_NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMY_NJKWebViewProgress.h; sourceTree = "<group>"; };
+		317C1E3D1D618A2C00921909 /* IMY_NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMY_NJKWebViewProgress.m; sourceTree = "<group>"; };
+		317C1E3E1D618A2C00921909 /* WYWeakScriptMessageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYWeakScriptMessageDelegate.h; sourceTree = "<group>"; };
+		317C1E3F1D618A2C00921909 /* WYWeakScriptMessageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYWeakScriptMessageDelegate.m; sourceTree = "<group>"; };
+		317C1E431D618E4B00921909 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		319833CB1D5DB8C300FF5B22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		31AE5C961CED9BE500072CF0 /* ZYShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYShareItem.h; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItem.h"; sourceTree = "<group>"; };
 		31AE5C971CED9BE500072CF0 /* ZYShareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYShareItem.m; path = "../../../../../Downloads/ZYShareView-master/ZYShareView/ZYShareItem.m"; sourceTree = "<group>"; };
@@ -141,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317C1E441D618E4B00921909 /* WebKit.framework in Frameworks */,
 				319833CC1D5DB8C300FF5B22 /* CoreLocation.framework in Frameworks */,
 				3153FEAF1CE47897001B2E5D /* libz.tbd in Frameworks */,
 				31014A491D5B216D00A729F6 /* libstdc++.tbd in Frameworks */,
@@ -227,6 +239,7 @@
 		312AEB561CE41F8900EB828A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				317C1E381D618A2C00921909 /* Classes */,
 				313D78F61D0E53BC00FEAA3D /* CCActivityHUD */,
 				313D78EA1D0E538700FEAA3D /* ShareView */,
 				31014A4A1D5B225700A729F6 /* SDK */,
@@ -272,6 +285,7 @@
 		3153FE911CE46C92001B2E5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				317C1E431D618E4B00921909 /* WebKit.framework */,
 				319833CB1D5DB8C300FF5B22 /* CoreLocation.framework */,
 				31014A481D5B216D00A729F6 /* libstdc++.tbd */,
 				31014A461D5B215100A729F6 /* libiconv.tbd */,
@@ -287,6 +301,28 @@
 				3153FEAC1CE4788A001B2E5D /* libc++.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		317C1E381D618A2C00921909 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				317C1E391D618A2C00921909 /* IMYWebView.h */,
+				317C1E3A1D618A2C00921909 /* IMYWebView.m */,
+				317C1E3B1D618A2C00921909 /* UIWebViewProgress */,
+				317C1E3E1D618A2C00921909 /* WYWeakScriptMessageDelegate.h */,
+				317C1E3F1D618A2C00921909 /* WYWeakScriptMessageDelegate.m */,
+			);
+			name = Classes;
+			path = "../../../../../Downloads/IMYWebView-master/Classes";
+			sourceTree = "<group>";
+		};
+		317C1E3B1D618A2C00921909 /* UIWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				317C1E3C1D618A2C00921909 /* IMY_NJKWebViewProgress.h */,
+				317C1E3D1D618A2C00921909 /* IMY_NJKWebViewProgress.m */,
+			);
+			path = UIWebViewProgress;
 			sourceTree = "<group>";
 		};
 		631FA9571CE2334D008C31D0 = {
@@ -487,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				312AEB5C1CE424A100EB828A /* QPViewController.m in Sources */,
+				317C1E401D618A2C00921909 /* IMYWebView.m in Sources */,
 				312AEB521CE41F2F00EB828A /* TempletView.m in Sources */,
 				631FA96B1CE2334D008C31D0 /* ParentViewController.m in Sources */,
 				312AEB471CE41D0600EB828A /* QPView.m in Sources */,
@@ -496,9 +533,11 @@
 				311B46ED1D1BC64D003997D7 /* MapView.m in Sources */,
 				31AE5CA51CED9BE500072CF0 /* ZYShareView.m in Sources */,
 				31AE5CA11CED9BE500072CF0 /* ZYShareItem.m in Sources */,
+				317C1E421D618A2C00921909 /* WYWeakScriptMessageDelegate.m in Sources */,
 				31AE5CA21CED9BE500072CF0 /* ZYShareItemCell.m in Sources */,
 				31AE5CA41CED9BE500072CF0 /* ZYShareSheetView.m in Sources */,
 				631FA9681CE2334D008C31D0 /* AppDelegate.m in Sources */,
+				317C1E411D618A2C00921909 /* IMY_NJKWebViewProgress.m in Sources */,
 				31AE5CA31CED9BE500072CF0 /* ZYShareSheetCell.m in Sources */,
 				635AEAF41CE4D0DF000DC1A3 /* NavigationView.m in Sources */,
 				631FA9651CE2334D008C31D0 /* main.m in Sources */,

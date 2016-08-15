@@ -18,25 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    if(_locationManager==nil) {
-        
-        _locationManager= [[CLLocationManager alloc]init];
-        
-        _locationManager.delegate=self;
-        
-        _locationManager.distanceFilter=500;//定位 频率
-        
-        if([[[UIDevice currentDevice]systemVersion]doubleValue]>=8.0) {
-            
-            [_locationManager requestAlwaysAuthorization];
-            
-        }else
-            
-            [_locationManager requestWhenInUseAuthorization];
-        
-    }
-    
-    [_locationManager startUpdatingLocation];
     //向微信注册
     [WXApi registerApp:WXPatient_App_ID withDescription:@"weixin"];
     
