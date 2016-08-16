@@ -65,7 +65,7 @@
     if ([WXApi isWXAppInstalled])
     {
         UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(27 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];
-        [weChatButton setTag:1];
+        [weChatButton setTag:0];
         [weChatButton setExclusiveTouch:YES];
         [weChatButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [indexView addSubview:weChatButton];

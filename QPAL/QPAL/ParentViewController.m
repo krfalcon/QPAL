@@ -39,24 +39,9 @@
     NSString *userToken = [defaults objectForKey:@"userToken"];
     
     if (userToken) {
-        /*
-        navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:3 andTitle:@""];
-        [navi setDelegate:self];
-        [self.view addSubview:navi];
-        
-        weChatViewController = [[WeChatLoginViewController alloc] init];
-        [weChatViewController setDelegate:self];
-        
-        weChatViewController.userToken = userToken;
-        
-        [navi createNextNavigationBarWithColor:ThemeBlack andTitle:@"" andIsIndex:NO];
-        
-        */
         [self pushViewControllerWithViewControllerType:ViewControllerTypeWeChat andToken:userToken];
         
         [viewControllerContainer addSubview:weChatViewController.view];
-        
-        //currentViewController = weChatViewController;
         
     } else {
         QPViewController *qpViewController = [[QPViewController alloc] init];
@@ -68,9 +53,6 @@
         viewControllerArray = [[NSMutableArray alloc] init];
         [viewControllerArray addObject:currentViewController];
         }
-    
-    
-    
 }
 
 - (void)getUserToken {
@@ -147,7 +129,7 @@
                          [navi changeNavigationBarWithRatio:0.f];
                      }
                      completion:^(BOOL finished){
-                         [navi changeNavigationBarAddArray];
+                         //[navi changeNavigationBarAddArray];
                          currentViewController.view.userInteractionEnabled = NO;
                          currentViewController = nextViewController;
                          nextViewController = nil;
@@ -239,14 +221,14 @@
                                                icon:@"Action_MyFavAdd"
                                             handler:^{ [weakSelf WXActionMyFavAdd]; }];
     
-    /*ZYShareItem *item3 = [ZYShareItem itemWithTitle:@"地图"
-                                               icon:@"Action_Map"
-                                            handler:^{ [weakSelf WXActionMap]; }];*/
+    ZYShareItem *item3 = [ZYShareItem itemWithTitle:@"退出登录"
+                                               icon:@"Action_LogOut"
+                                            handler:^{ [weakSelf WXActionLogOut]; }];
     
     
     // 创建shareView
     ZYShareView *shareView = [ZYShareView shareViewWithShareItems:@[item0, item1, item2]
-                                                    functionItems:nil];
+                                                    functionItems:@[item3]];
     // 弹出shareView
     [shareView show];
 }
@@ -305,8 +287,23 @@
     [WXApi sendReq:req];
 }
 
-- (void)WXActionMap{
-    [self pushViewControllerWithViewControllerType:ViewControllerTypeMap andToken:nil];
+- (void)WXActionLogOut{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in [storage cookies]) {
+        [storage deleteCookie:cookie];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //[weChatViewController.webView removeFromSuperview];
+    //viewControllerContainer = nil;
+    
+    //[navi removeFromSuperview];
+    
+    [self viewDidLoad];
 }
 
 - (void)showTipViewWithMessage:(NSNotification *)notification {

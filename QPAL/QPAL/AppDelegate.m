@@ -94,7 +94,7 @@
                         Code:(NSString *)code {
     NSError *error;
     NSString *accessUrlStr = [NSString stringWithFormat:@"http://sw.dgshare.cn/crm/BindCustomer?Nickname=%@&HeadImgUrl=%@&Code=%@&From=wx", nickname, headimgurl, code];
-    NSLog(@"%@",accessUrlStr);
+    //NSLog(@"%@",accessUrlStr);
     accessUrlStr = [accessUrlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:accessUrlStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

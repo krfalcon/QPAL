@@ -16,10 +16,10 @@
 
 @protocol WeChatLoginViewControllerDelegate;
 
-@interface WeChatLoginViewController : UIViewController
+@interface WeChatLoginViewController : UIViewController<UIWebViewDelegate>
 
 @property (strong, nonatomic) NSString*     userToken;
-@property (strong, nonatomic) IMYWebView*    webView;
+@property (strong, nonatomic) UIWebView*    webView;
 @property (weak, nonatomic)  id<WeChatLoginViewControllerDelegate>      delegate;
 
 @property (strong, nonatomic) CCActivityHUD *activityHUD;

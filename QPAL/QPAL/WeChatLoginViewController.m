@@ -19,19 +19,20 @@
     [self.view setFrame:super.view.bounds];
     
     //IMYWebView *webView = [[IMYWebView alloc] initWithFrame:CGRectMake(0, 68, self.view.frame.size.width, self.view.frame.size.height - 68)];
-    IMYWebView *webView = [[IMYWebView alloc] init];
-    _webView = webView;
+    //IMYWebView *webView = [[IMYWebView alloc] init];
+    UIWebView *wb = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    _webView = wb;
     _webView.delegate = self;
     
     NSURL *url = [NSURL URLWithString:WXAddress];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPShouldHandleCookies:YES];
+    [request setHTTPShouldHandleCookies:NO];
     [request setValue:[NSString stringWithFormat:@"UserToken=%@",_userToken] forHTTPHeaderField:@"Cookie"];
-    [webView loadRequest:request];
+    [_webView loadRequest:request];
     
     [self.activityHUD show];
     
-    [self.view addSubview:webView];
+    [self.view addSubview:_webView];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {

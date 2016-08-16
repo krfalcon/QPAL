@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QPAL/NavigationView.m"
-            timestampString = "485682893.440209"
+            timestampString = "493010856.986536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -58,7 +58,7 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "492944370.194101"
+                  timestampString = "493020638.503898"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -73,7 +73,7 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "492944370.194255"
+                  timestampString = "493020638.504155"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -135,12 +135,28 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QPAL/WeChatLoginViewController.m"
-            timestampString = "492944781.192218"
+            filePath = "QPAL/ParentViewController.m"
+            timestampString = "493012105.622318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "-WXActionLogOut"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/WeChatLoginViewController.m"
+            timestampString = "493010806.879464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -151,13 +167,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
-            timestampString = "492944370.142908"
+            filePath = "QPAL/ParentViewController.m"
+            timestampString = "493010974.751492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-pushViewControllerWithViewControllerType:andToken:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -167,13 +183,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
-            timestampString = "492944370.142908"
+            filePath = "QPAL/ParentViewController.m"
+            timestampString = "493019275.659088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-initWithFrame:usingUIWebView:"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-getUserToken"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -183,13 +199,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
-            timestampString = "492944370.142908"
+            filePath = "QPAL/NavigationView.m"
+            timestampString = "493020023.26919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-_initMyself"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-changeNavigationBarAddArray"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -199,13 +215,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Downloads/IMYWebView-master/Classes/IMYWebView.m"
-            timestampString = "492944370.142908"
+            filePath = "QPAL/WeChatLoginViewController.m"
+            timestampString = "493026461.15983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-initWKWebView"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-webViewDidFinishLoad:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/ParentViewController.m"
+            timestampString = "493020215.642072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-pushViewControllerWithViewControllerType:andToken:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/WeChatLoginViewController.m"
+            timestampString = "493026461.15983"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

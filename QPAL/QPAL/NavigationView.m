@@ -170,7 +170,6 @@
     [navigationBar removeFromSuperview];
     navigationBar = navigationBarNew;
     [navigationBarArray addObject:navigationBar];
-    navigationBarNew = nil;
     
     _hasNew = NO;
 }

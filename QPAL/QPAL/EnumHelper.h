@@ -49,6 +49,7 @@ typedef NS_ENUM(NSInteger, ViewControllerType) {
     ViewControllerTypeWifi,
     ViewControllerTypeMap,
     ViewControllerTypeGuest,
+    ViewControllerTypeLogIn,
     ViewControllerTypeWeChat
     
 };
