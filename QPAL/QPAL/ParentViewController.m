@@ -40,19 +40,22 @@
     
     if (userToken) {
         [self pushViewControllerWithViewControllerType:ViewControllerTypeWeChat andToken:userToken];
-        
         [viewControllerContainer addSubview:weChatViewController.view];
         
-    } else {
+        //currentViewController = weChatViewController;
+        
+    }
+    else {
         QPViewController *qpViewController = [[QPViewController alloc] init];
         [qpViewController setDelegate:self];
         [viewControllerContainer addSubview:qpViewController.view];
-    
+   
         currentViewController = qpViewController;
         
         viewControllerArray = [[NSMutableArray alloc] init];
         [viewControllerArray addObject:currentViewController];
-        }
+    }
+        
 }
 
 - (void)getUserToken {
@@ -101,17 +104,6 @@
             break;
         }
             
-        case ViewControllerTypeMap:
-        {
-            MapViewController *mapViewController = [[MapViewController alloc] init];
-            
-            [navi createNextNavigationBarWithColor:ThemeBlack andTitle:@"地图" andIsIndex:NO];
-            
-            nextViewController = mapViewController;
-            
-            break;
-        }
-            
         default:
             break;
     }
@@ -130,7 +122,7 @@
                      }
                      completion:^(BOOL finished){
                          //[navi changeNavigationBarAddArray];
-                         currentViewController.view.userInteractionEnabled = NO;
+                         //currentViewController.view.userInteractionEnabled = NO;
                          currentViewController = nextViewController;
                          nextViewController = nil;
                          
