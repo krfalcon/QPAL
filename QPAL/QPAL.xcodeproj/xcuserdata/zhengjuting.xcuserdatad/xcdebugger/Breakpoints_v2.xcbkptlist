@@ -58,12 +58,12 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "493181151.253109"
+                  timestampString = "493205033.865328"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
                   endingLineNumber = "115"
-                  offsetFromSymbolStart = "1624">
+                  offsetFromSymbolStart = "1620">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -73,12 +73,12 @@
                   moduleName = "QPAL"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/NavigationView.m"
-                  timestampString = "493181151.253253"
+                  timestampString = "493205033.865645"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
                   endingLineNumber = "115"
-                  offsetFromSymbolStart = "1648">
+                  offsetFromSymbolStart = "1632">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -183,13 +183,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QPAL/AppDelegate.m"
-            timestampString = "493119329.262785"
+            filePath = "../../../../Downloads/OpenSDK1.7/Wechat/WechatProxy.m"
+            timestampString = "493119245.387663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-onResp:"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-registerWithConfiguration:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -199,13 +199,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Downloads/OpenSDK1.7/Wechat/WechatProxy.m"
-            timestampString = "493119245.387663"
+            filePath = "QPAL/AppDelegate.m"
+            timestampString = "493198971.122174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-registerWithConfiguration:"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-application:handleOpenURL:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/QPView.m"
+            timestampString = "493202113.111202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "-tencentDidLogin"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/QPView.m"
+            timestampString = "493202113.111202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "-getUserInfoResponse:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/QPView.m"
+            timestampString = "493202113.111202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "-QQgetUserTokenWithNickName:HeadImgUrl:Code:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QPAL/QPView.m"
+            timestampString = "493204856.932378"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
+            landmarkName = "-QQgetUserTokenWithNickName:HeadImgUrl:Code:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

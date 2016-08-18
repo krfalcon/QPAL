@@ -104,10 +104,14 @@
     }
     
     UIButton *qqButton = [[UIButton alloc] initWithFrame:CGRectMake(113 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];
-    [qqButton setTag:0];
+    [qqButton setTag:4];
     [qqButton setExclusiveTouch:YES];
     [qqButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [indexView addSubview:qqButton];
+    
+    UIImageView *qqLogin = [[UIImageView alloc] initWithFrame:qqButton.bounds];
+    [qqLogin setImage:[UIImage imageNamed:@"Button_qq"]];
+    [qqButton addSubview:qqLogin];
 }
 
 #pragma mark - Button Events
@@ -191,6 +195,13 @@
             }
             break;
         }
+        case 4:
+        {
+
+            [self QQLogin];
+            
+            break;
+        }
         default:
             break;
     }
@@ -206,13 +217,67 @@
 }
 
 - (void)QQLogin {
-    if ([WXApi isWXAppInstalled]) {
-        SendAuthReq *req = [[SendAuthReq alloc] init];
-        req.scope = @"snsapi_userinfo";
-        req.state = @"App";
-        [WXApi sendReq:req];
+    //[_delegate QQLogin];
+    _tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"1105514703" andDelegate:self];
+    NSArray *_permissions = [NSArray arrayWithObjects:kOPEN_PERMISSION_GET_INFO, kOPEN_PERMISSION_GET_USER_INFO, kOPEN_PERMISSION_GET_SIMPLE_USER_INFO, nil];
+    [_tencentOAuth authorize:_permissions inSafari:NO]; //授权
+}
+
+#pragma mark - QQ
+
+- (void)tencentDidLogin {
+    if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length]){
+        //  记录登录用户的OpenID、Token以及过期时间
+        //NSLog(@"%@",_tencentOAuth.accessToken);
+        [_tencentOAuth getUserInfo];
+        
+    }else {
     }
 }
+
+-(void)getUserInfoResponse:(APIResponse *)response {
+    //NSLog(@"respons:%@",response.jsonResponse);
+    NSString *nickName = [response.jsonResponse objectForKey:@"nickname"];
+    NSString *headImgUrl = [response.jsonResponse objectForKey:@"figureurl_qq_1"];
+    [self QQgetUserTokenWithNickName:nickName HeadImgUrl:headImgUrl Code:nil ];
+    //self.name.text = [response.jsonResponse objectForKey:@"nickname"];
+}
+
+- (void)QQgetUserTokenWithNickName:(NSString *)nickname
+                        HeadImgUrl:(NSString *)headimgurl
+                              Code:(NSString *)code {
+    NSError *error;
+    NSString *accessUrlStr = [NSString stringWithFormat:@"http://sw.dgshare.cn/crm/BindCustomer?Nickname=%@&HeadImgUrl=%@&Code=%@&From=qq", nickname, headimgurl, code];
+
+    accessUrlStr = [accessUrlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:accessUrlStr];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+
+    if (resDic[@"c"] != [NSNull null]) {
+        NSString *userToken = [NSString stringWithFormat:@"%@",resDic[@"Customer"][@"Token"]];
+        //NSLog(@"%@",userToken);
+        NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
+        [defalts setObject:userToken forKey:@"userToken"];
+        
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"getUserToken" object:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"登陆失败"
+                                                       delegate:self
+                                              cancelButtonTitle:@"好的"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
+        [defalts removeObjectForKey:@"access_token"];
+        [defalts removeObjectForKey:@"unionid"];
+    }
+    
+}
+
 
 #pragma mark - TextField Delegate
 

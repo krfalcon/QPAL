@@ -20,8 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //向微信注册
     [WXApi registerApp:WXPatient_App_ID withDescription:@"weixin"];
-    
-    //[self configHoDiplomatSDK];
+    _tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"1105514703" andDelegate:self];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
@@ -33,13 +32,6 @@
     return YES;
 }
 
-- (void)configHoDiplomatSDK
-{
-    [[Diplomat sharedInstance] registerWithConfigurations:@{
-                                                            kDiplomatTypeWechat: @{kDiplomatAppIdKey: WXPatient_App_ID,
-                                                                                   kDiplomatAppSecretKey: WXPatient_App_Secret},
-                                                            }];
-}
 /*
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
@@ -50,7 +42,7 @@
 #pragma mark - WeChat
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [WXApi handleOpenURL:url delegate:self];
-    
+    [TencentOAuth HandleOpenURL:url];
     return YES;
 }
 
@@ -118,10 +110,8 @@
     
     NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
     //NSLog(@"%@", resDic);
-    //NSString *userToken = [[resDic objectForKey:@"c"] objectForKey:@"Token"];
     if (resDic[@"c"] != [NSNull null]) {
         NSString *userToken = [NSString stringWithFormat:@"%@",resDic[@"Customer"][@"Token"]];
-        //NSLog(@"%@",userToken);
         NSUserDefaults *defalts = [NSUserDefaults standardUserDefaults];
         [defalts setObject:userToken forKey:@"userToken"];
         
@@ -140,13 +130,6 @@
     }
     
 }
-/*
-#pragma mark - QQ
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    return [TencentOAuth HandleOpenURL:url];
-}
-*/
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

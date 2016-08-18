@@ -24,5 +24,6 @@
 @protocol  QPViewControllerDelegate <NSObject>
 
 - (void)pushViewControllerWithViewControllerType:(ViewControllerType)viewControllerType andToken:(NSString *)string;
+- (void)QQLogin;
 
 @end

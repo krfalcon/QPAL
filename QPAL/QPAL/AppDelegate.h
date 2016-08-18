@@ -9,18 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "ParentViewController.h"
 #import "WXApi.h"
-
-#import "Diplomat.h"
-#import "WechatProxy.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 #import "WsAddrHelper.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,TencentSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UINavigationController *navController;
+@property (strong, nonatomic) TencentOAuth           *tencentOAuth;
 
 
 @end

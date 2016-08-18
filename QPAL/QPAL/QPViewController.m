@@ -27,6 +27,11 @@
         [_delegate pushViewControllerWithViewControllerType:ViewControllerTypeGuest andToken:nil];
     }}
 
+- (void)QQLogin {
+    if (_delegate && [_delegate respondsToSelector:@selector(pushViewControllerWithViewControllerType:andToken:)]) {
+        [_delegate QQLogin];
+    }}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
