@@ -42,7 +42,7 @@
         [self pushViewControllerWithViewControllerType:ViewControllerTypeWeChat andToken:userToken];
         [viewControllerContainer addSubview:weChatViewController.view];
         
-        //currentViewController = weChatViewController;
+        [weChatViewController.activityHUD show];
         
     }
     else {

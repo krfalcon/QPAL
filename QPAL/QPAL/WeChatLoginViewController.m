@@ -15,7 +15,7 @@
     [super viewDidLoad];
     
     self.activityHUD = [CCActivityHUD new];
-    
+
     [self.view setFrame:super.view.bounds];
     
     //IMYWebView *webView = [[IMYWebView alloc] initWithFrame:CGRectMake(0, 68, self.view.frame.size.width, self.view.frame.size.height - 68)];

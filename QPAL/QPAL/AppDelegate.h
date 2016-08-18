@@ -10,6 +10,9 @@
 #import "ParentViewController.h"
 #import "WXApi.h"
 
+#import "Diplomat.h"
+#import "WechatProxy.h"
+
 #import "WsAddrHelper.h"
 
 

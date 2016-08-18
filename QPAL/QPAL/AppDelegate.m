@@ -21,6 +21,8 @@
     //向微信注册
     [WXApi registerApp:WXPatient_App_ID withDescription:@"weixin"];
     
+    //[self configHoDiplomatSDK];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
     
@@ -30,6 +32,20 @@
     
     return YES;
 }
+
+- (void)configHoDiplomatSDK
+{
+    [[Diplomat sharedInstance] registerWithConfigurations:@{
+                                                            kDiplomatTypeWechat: @{kDiplomatAppIdKey: WXPatient_App_ID,
+                                                                                   kDiplomatAppSecretKey: WXPatient_App_Secret},
+                                                            }];
+}
+/*
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [[Diplomat sharedInstance] handleOpenURL:url];
+}*/
+
 
 #pragma mark - WeChat
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {

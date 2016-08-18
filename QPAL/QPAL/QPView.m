@@ -19,17 +19,41 @@
     [imageView setImage:[UIImage imageNamed:@"bg"]];
     [indexView addSubview:imageView];
     
-    UIButton *securityButton = [[UIButton alloc] initWithFrame:CGRectMake(228 * self.scale, 459 / 2 * self.scale, 245 / 2 * self.scale, 56.5 * self.scale)];
+    UIImageView *phonePhotoImageView = [[UIImageView alloc] initWithFrame:CGRectMake( 53 / 2 * self.scale, 200 * self.scale, 12 * self.scale, 19 *  self.scale)];
+    [phonePhotoImageView setImage:[UIImage imageNamed:@"phonePhoto"]];
+    [indexView addSubview:phonePhotoImageView];
+    
+    UIImageView *securityNumberImageView = [[UIImageView alloc] initWithFrame:CGRectMake(24 * self.scale, 260 * self.scale, 16 * self.scale, 18 * self.scale)];
+    [securityNumberImageView setImage:[UIImage imageNamed:@"lockPhoto"]];
+    [indexView addSubview:securityNumberImageView];
+    
+    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(25 * self.scale, 240 * self.scale, self.frame.size.width - 25 * 2 * self.scale, 2 * self.scale)];
+    [line1 setBackgroundColor:AbsoluteWhite];
+    [indexView addSubview:line1];
+    
+    UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(25 * self.scale, 296.5 * self.scale, self.frame.size.width - 25 * 2 * self.scale, 2 * self.scale)];
+    [line2 setBackgroundColor:AbsoluteWhite];
+    [indexView addSubview:line2];
+    
+    UIButton *securityButton = [[UIButton alloc] initWithFrame:CGRectMake(230 * self.scale, 240 * self.scale, 121 * 1 * self.scale, 56.5 * 1 * self.scale)];
     [securityButton setTag:2];
     [securityButton setExclusiveTouch:YES];
     [securityButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [indexView addSubview:securityButton];
     
-    UIButton *guestButton = [[UIButton alloc] initWithFrame:CGRectMake(22.5 * self.scale, 331 * self.scale, 659/2 * self.scale, 54 * self.scale)];
-    [guestButton setTag:3];
-    [guestButton setExclusiveTouch:YES];
-    [guestButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
-    [indexView addSubview:guestButton];
+    UIImageView *securityCodeView = [[UIImageView alloc] initWithFrame:securityButton.bounds];
+    [securityCodeView setImage:[UIImage imageNamed:@"securityCode"]];
+    [securityButton addSubview:securityCodeView];
+
+    UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake(22.5 * self.scale, 331 * self.scale, 659/2 * self.scale, 54 * self.scale)];
+    [loginButton setTag:3];
+    [loginButton setExclusiveTouch:YES];
+    [loginButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [indexView addSubview:loginButton];
+    
+    UIImageView *loginImageView = [[UIImageView alloc] initWithFrame:loginButton.bounds];
+    [loginImageView setImage:[UIImage imageNamed:@"loginButton"]];
+    [loginButton addSubview:loginImageView];
     
     endTextingButton = [[UIButton alloc] initWithFrame:self.bounds];
     [endTextingButton setEnabled:NO];
@@ -37,7 +61,7 @@
     [endTextingButton addTarget:self action:@selector(textFieldShouldReturn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:endTextingButton];
     
-    phoneTextField = [[UITextField alloc ] initWithFrame:CGRectMake(45 * self.scale, 193 * self.scale, 200 * self.scale, 35 * self.scale)];
+    phoneTextField = [[UITextField alloc ] initWithFrame:CGRectMake(45 * self.scale, 193 * self.scale, 210 * self.scale, 35 * self.scale)];
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"请输入手机号码" attributes:@{ NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [phoneTextField setAttributedPlaceholder:str];
     [phoneTextField setFont:[UIFont systemFontOfSize:18 * self.scale]];
@@ -47,7 +71,7 @@
     [phoneTextField setTextColor:[UIColor whiteColor]];
     [indexView addSubview: phoneTextField];
     
-    securityCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(45 * self.scale, 250 * self.scale, 200 * self.scale, 35 * self.scale)];
+    securityCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(45 * self.scale, 253 * self.scale, 210 * self.scale, 35 * self.scale)];
     NSAttributedString *str2 = [[NSAttributedString alloc] initWithString:@"请输入6位验证码" attributes:@{ NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [securityCodeTextField setAttributedPlaceholder:str2];
     [securityCodeTextField setFont:[UIFont systemFontOfSize:18 * self.scale]];
@@ -59,9 +83,12 @@
     /*
     UIImageView *guestLogin = [[UIImageView alloc] initWithFrame:guestButton.bounds];
     [guestLogin setImage:[UIImage imageNamed:@"btn-youke"]];
-    [guestButton addSubview:guestLogin];
-    */
+    [guestButton addSubview:guestLogin];*/
     
+    UIImageView *thirdPlatform = [[UIImageView alloc] initWithFrame:CGRectMake(0, 440 * self.scale, self.frame.size.width, 12 * self.scale)];
+    [thirdPlatform setImage:[UIImage imageNamed:@"thirdPlatform"]];
+    [indexView addSubview:thirdPlatform];
+     
     if ([WXApi isWXAppInstalled])
     {
         UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(27 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];
@@ -70,10 +97,10 @@
         [weChatButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [indexView addSubview:weChatButton];
         
-        /*
+        
         UIImageView *weChatLogin = [[UIImageView alloc] initWithFrame:weChatButton.bounds];
-        [weChatLogin setImage:[UIImage imageNamed:@"btn-weixin"]];
-        [weChatButton addSubview:weChatLogin];*/
+        [weChatLogin setImage:[UIImage imageNamed:@"Button_weixin"]];
+        [weChatButton addSubview:weChatLogin];
     }
     
     UIButton *qqButton = [[UIButton alloc] initWithFrame:CGRectMake(113 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];

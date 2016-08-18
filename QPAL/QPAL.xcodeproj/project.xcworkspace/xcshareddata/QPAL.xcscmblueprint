@@ -6,15 +6,17 @@
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "d934bc13-ce4c-7641-ad50-bebc1102c505" : 0,
+    "69E84AABF3855924C6C37D5627D35C2C3C374243" : 0,
+    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : 0,
     "6B0A9E9223DF18D5286A1FF214BE348736568BA2" : 0,
-    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : 0
+    "d934bc13-ce4c-7641-ad50-bebc1102c505" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "30FB46B3-0148-46F6-87FB-CF9DC2DDB840",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "d934bc13-ce4c-7641-ad50-bebc1102c505" : "..\/..\/Desktop\/TSOutlets_iOS",
+    "69E84AABF3855924C6C37D5627D35C2C3C374243" : "HoDiplomat\/",
+    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : "RxWebViewController\/",
     "6B0A9E9223DF18D5286A1FF214BE348736568BA2" : "QPAL\/",
-    "0B31CD83FB5067F8F50377F7352802B882FF99FD" : "RxWebViewController\/"
+    "d934bc13-ce4c-7641-ad50-bebc1102c505" : "..\/..\/Desktop\/TSOutlets_iOS"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "QPAL",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -24,6 +26,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Roxasora\/RxWebViewController",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B31CD83FB5067F8F50377F7352802B882FF99FD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/DevSonw\/HoDiplomat.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "69E84AABF3855924C6C37D5627D35C2C3C374243"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/krfalcon\/QPAL",
