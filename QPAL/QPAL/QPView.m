@@ -55,6 +55,16 @@
     [loginImageView setImage:[UIImage imageNamed:@"loginButton"]];
     [loginButton addSubview:loginImageView];
     
+    UIButton *guestButton = [[UIButton alloc] initWithFrame:CGRectMake(22.5 * self.scale, 420 * self.scale, 659/2 * self.scale, 54 * self.scale)];
+    [guestButton setTag:0];
+    [guestButton setExclusiveTouch:YES];
+    [guestButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [indexView addSubview:guestButton];
+    
+    UIImageView *guestImageView = [[UIImageView alloc] initWithFrame:loginButton.bounds];
+    [guestImageView setImage:[UIImage imageNamed:@"guestButton"]];
+    [guestButton addSubview:guestImageView];
+    
     endTextingButton = [[UIButton alloc] initWithFrame:self.bounds];
     [endTextingButton setEnabled:NO];
     [endTextingButton setExclusiveTouch:YES];
@@ -80,18 +90,14 @@
     [securityCodeTextField setKeyboardType:UIKeyboardTypeNumberPad];
     [securityCodeTextField setTextColor:[UIColor whiteColor]];
     [indexView addSubview: securityCodeTextField];
-    /*
-    UIImageView *guestLogin = [[UIImageView alloc] initWithFrame:guestButton.bounds];
-    [guestLogin setImage:[UIImage imageNamed:@"btn-youke"]];
-    [guestButton addSubview:guestLogin];*/
     
-    UIImageView *thirdPlatform = [[UIImageView alloc] initWithFrame:CGRectMake(0, 440 * self.scale, self.frame.size.width, 12 * self.scale)];
+    UIImageView *thirdPlatform = [[UIImageView alloc] initWithFrame:CGRectMake(0, 520 * self.scale, self.frame.size.width, 12 * self.scale)];
     [thirdPlatform setImage:[UIImage imageNamed:@"thirdPlatform"]];
     [indexView addSubview:thirdPlatform];
      
     if ([WXApi isWXAppInstalled])
     {
-        UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(27 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];
+        UIButton *weChatButton = [[UIButton alloc] initWithFrame:CGRectMake(27 * self.scale, 567 * self.scale, 50 * self.scale, 50 * self.scale)];
         [weChatButton setTag:1];
         [weChatButton setExclusiveTouch:YES];
         [weChatButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -103,7 +109,9 @@
         [weChatButton addSubview:weChatLogin];
     }
     
-    UIButton *qqButton = [[UIButton alloc] initWithFrame:CGRectMake(113 * self.scale, 497 * self.scale, 50 * self.scale, 50 * self.scale)];
+    if ([TencentOAuth iphoneQQInstalled]){
+    
+    UIButton *qqButton = [[UIButton alloc] initWithFrame:CGRectMake(113 * self.scale, 567 * self.scale, 50 * self.scale, 50 * self.scale)];
     [qqButton setTag:4];
     [qqButton setExclusiveTouch:YES];
     [qqButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -112,6 +120,19 @@
     UIImageView *qqLogin = [[UIImageView alloc] initWithFrame:qqButton.bounds];
     [qqLogin setImage:[UIImage imageNamed:@"Button_qq"]];
     [qqButton addSubview:qqLogin];
+    }
+    
+    if ([WeiboSDK isWeiboAppInstalled]) {
+        UIButton *weiboButton = [[UIButton alloc] initWithFrame:CGRectMake(199 * self.scale, 567 * self.scale, 50 * self.scale, 50 * self.scale)];
+        [weiboButton setTag:5];
+        [weiboButton setExclusiveTouch:YES];
+        [weiboButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
+        [indexView addSubview:weiboButton];
+        
+        UIImageView *weiboLogin = [[UIImageView alloc] initWithFrame:weiboButton.bounds];
+        [weiboLogin setImage:[UIImage imageNamed:@"Button_weibo"]];
+        [weiboButton addSubview:weiboLogin];
+    }
 }
 
 #pragma mark - Button Events
@@ -121,10 +142,10 @@
     switch (button.tag) {
         case 0:
         {
-            /*if (_delegate && [_delegate respondsToSelector:@selector(guestLogin)]) {
+            if (_delegate && [_delegate respondsToSelector:@selector(guestLogin)]) {
                 [_delegate guestLogin];
-            }*/
-            [_delegate guestLogin];
+            }
+            //[_delegate guestLogin];
             break;
         }
         
@@ -202,6 +223,14 @@
             
             break;
         }
+            
+        case 5:
+        {
+            
+            [self WeiboLogin];
+            
+            break;
+        }
         default:
             break;
     }
@@ -223,6 +252,14 @@
     [_tencentOAuth authorize:_permissions inSafari:NO]; //授权
 }
 
+- (void)WeiboLogin {
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    request.redirectURI = @"https://api.weibo.com/oauth2/default.html";
+    request.scope = @"all";
+    request.userInfo = @{@"myKey": @"myValue"};
+    [WeiboSDK sendRequest:request];
+}
+
 #pragma mark - QQ
 
 - (void)tencentDidLogin {
@@ -236,9 +273,10 @@
 }
 
 -(void)getUserInfoResponse:(APIResponse *)response {
-    //NSLog(@"respons:%@",response.jsonResponse);
+    NSLog(@"respons:%@",response.jsonResponse);
     NSString *nickName = [response.jsonResponse objectForKey:@"nickname"];
     NSString *headImgUrl = [response.jsonResponse objectForKey:@"figureurl_qq_1"];
+    //NSString *code =
     [self QQgetUserTokenWithNickName:nickName HeadImgUrl:headImgUrl Code:nil ];
     //self.name.text = [response.jsonResponse objectForKey:@"nickname"];
 }
@@ -277,7 +315,6 @@
     }
     
 }
-
 
 #pragma mark - TextField Delegate
 

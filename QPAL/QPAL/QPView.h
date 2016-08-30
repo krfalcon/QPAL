@@ -11,10 +11,11 @@
 #import "WXApi.h"
 #import "WsAddrHelper.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "WeiboSDK.h"
 
 @protocol QPViewDelegate;
 
-@interface QPView : TempletView <UITextFieldDelegate,TencentSessionDelegate>
+@interface QPView : TempletView <UITextFieldDelegate,TencentSessionDelegate,WeiboSDKDelegate>
 {
     UITextField*            phoneTextField;
     UITextField*            securityCodeTextField;

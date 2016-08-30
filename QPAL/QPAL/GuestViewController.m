@@ -24,7 +24,7 @@
     
     NSURL *url = [NSURL URLWithString:WXAddress];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPShouldHandleCookies:NO];
+    [request setHTTPShouldHandleCookies:YES];
     //[request setValue:[NSString stringWithFormat:@"UserToken=e3ebc8d2-0f06-44a8-b6de-4bcffe404d5e"] forHTTPHeaderField:@"Cookie"];
     [_webView loadRequest:request];
     [self.activityHUD show];

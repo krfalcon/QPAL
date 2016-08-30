@@ -10,11 +10,12 @@
 #import "ParentViewController.h"
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "WeiboSDK.h"
 
 #import "WsAddrHelper.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,TencentSessionDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate,TencentSessionDelegate,WeiboSDKDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

@@ -13,6 +13,13 @@
 		31014A491D5B216D00A729F6 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31014A481D5B216D00A729F6 /* libstdc++.tbd */; };
 		311B46EA1D1BC62F003997D7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311B46E91D1BC62F003997D7 /* MapViewController.m */; };
 		311B46ED1D1BC64D003997D7 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311B46EC1D1BC64D003997D7 /* MapView.m */; };
+		312310141D743B3E00C7BCE9 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 312310071D743B3E00C7BCE9 /* libWeiboSDK.a */; };
+		312310151D743B3E00C7BCE9 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 312310111D743B3E00C7BCE9 /* WeiboSDK.bundle */; };
+		312310171D743B7300C7BCE9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312310161D743B7300C7BCE9 /* CoreText.framework */; };
+		312310191D743B7B00C7BCE9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312310181D743B7B00C7BCE9 /* QuartzCore.framework */; };
+		3123101B1D743BB700C7BCE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3123101A1D743BB700C7BCE9 /* UIKit.framework */; };
+		3123101D1D743BC400C7BCE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3123101C1D743BC400C7BCE9 /* Foundation.framework */; };
+		312310201D74407D00C7BCE9 /* WeiboSDK.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 312310111D743B3E00C7BCE9 /* WeiboSDK.bundle */; };
 		312AEB471CE41D0600EB828A /* QPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB461CE41D0600EB828A /* QPView.m */; };
 		312AEB521CE41F2F00EB828A /* TempletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB511CE41F2F00EB828A /* TempletView.m */; };
 		312AEB5C1CE424A100EB828A /* QPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312AEB5B1CE424A100EB828A /* QPViewController.m */; };
@@ -80,6 +87,23 @@
 		311B46E91D1BC62F003997D7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		311B46EB1D1BC64D003997D7 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		311B46EC1D1BC64D003997D7 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		312310071D743B3E00C7BCE9 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		312310081D743B3E00C7BCE9 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
+		312310091D743B3E00C7BCE9 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
+		3123100A1D743B3E00C7BCE9 /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
+		3123100B1D743B3E00C7BCE9 /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
+		3123100C1D743B3E00C7BCE9 /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		3123100D1D743B3E00C7BCE9 /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
+		3123100E1D743B3E00C7BCE9 /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
+		3123100F1D743B3E00C7BCE9 /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
+		312310101D743B3E00C7BCE9 /* WeiboSDK+Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeiboSDK+Statistics.h"; sourceTree = "<group>"; };
+		312310111D743B3E00C7BCE9 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		312310121D743B3E00C7BCE9 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		312310131D743B3E00C7BCE9 /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
+		312310161D743B7300C7BCE9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		312310181D743B7B00C7BCE9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3123101A1D743BB700C7BCE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3123101C1D743BC400C7BCE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		312AEB451CE41D0600EB828A /* QPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPView.h; sourceTree = "<group>"; };
 		312AEB461CE41D0600EB828A /* QPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPView.m; sourceTree = "<group>"; };
 		312AEB501CE41F2F00EB828A /* TempletView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempletView.h; sourceTree = "<group>"; };
@@ -158,6 +182,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				312310201D74407D00C7BCE9 /* WeiboSDK.bundle in Frameworks */,
+				3123101D1D743BC400C7BCE9 /* Foundation.framework in Frameworks */,
+				3123101B1D743BB700C7BCE9 /* UIKit.framework in Frameworks */,
+				313D78F81D0E53E100FEAA3D /* ImageIO.framework in Frameworks */,
+				312310191D743B7B00C7BCE9 /* QuartzCore.framework in Frameworks */,
+				312310171D743B7300C7BCE9 /* CoreText.framework in Frameworks */,
 				315764A61D65998C00BA1B19 /* TencentOpenApi_IOS_Bundle.bundle in Frameworks */,
 				315764A71D65998C00BA1B19 /* TencentOpenAPI.framework in Frameworks */,
 				31014A471D5B215100A729F6 /* libiconv.tbd in Frameworks */,
@@ -169,8 +199,8 @@
 				31014A491D5B216D00A729F6 /* libstdc++.tbd in Frameworks */,
 				31014A451D5B214000A729F6 /* CoreGraphics.framework in Frameworks */,
 				3153FEB31CE478B3001B2E5D /* SystemConfiguration.framework in Frameworks */,
-				313D78F81D0E53E100FEAA3D /* ImageIO.framework in Frameworks */,
 				3153FEB71CE478C6001B2E5D /* libsqlite3.tbd in Frameworks */,
+				312310141D743B3E00C7BCE9 /* libWeiboSDK.a in Frameworks */,
 				3153FEB51CE478BD001B2E5D /* libsqlite3.0.tbd in Frameworks */,
 				3153FEB11CE478AD001B2E5D /* CoreTelephony.framework in Frameworks */,
 				3153FEAD1CE4788A001B2E5D /* libc++.tbd in Frameworks */,
@@ -195,6 +225,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		312310061D743B3E00C7BCE9 /* libWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				312310071D743B3E00C7BCE9 /* libWeiboSDK.a */,
+				312310081D743B3E00C7BCE9 /* WBHttpRequest+WeiboGame.h */,
+				312310091D743B3E00C7BCE9 /* WBHttpRequest+WeiboShare.h */,
+				3123100A1D743B3E00C7BCE9 /* WBHttpRequest+WeiboToken.h */,
+				3123100B1D743B3E00C7BCE9 /* WBHttpRequest+WeiboUser.h */,
+				3123100C1D743B3E00C7BCE9 /* WBHttpRequest.h */,
+				3123100D1D743B3E00C7BCE9 /* WBSDKBasicButton.h */,
+				3123100E1D743B3E00C7BCE9 /* WBSDKCommentButton.h */,
+				3123100F1D743B3E00C7BCE9 /* WBSDKRelationshipButton.h */,
+				312310101D743B3E00C7BCE9 /* WeiboSDK+Statistics.h */,
+				312310111D743B3E00C7BCE9 /* WeiboSDK.bundle */,
+				312310121D743B3E00C7BCE9 /* WeiboSDK.h */,
+				312310131D743B3E00C7BCE9 /* WeiboUser.h */,
+			);
+			name = libWeiboSDK;
+			path = SDK/libWeiboSDK;
+			sourceTree = "<group>";
+		};
 		312AEB481CE41D0E00EB828A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +281,7 @@
 		312AEB561CE41F8900EB828A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				312310061D743B3E00C7BCE9 /* libWeiboSDK */,
 				31EDFECB1D658DE400E44C2F /* Wechat */,
 				317C1E381D618A2C00921909 /* Classes */,
 				313D78F61D0E53BC00FEAA3D /* CCActivityHUD */,
@@ -276,6 +328,10 @@
 		3153FE911CE46C92001B2E5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3123101C1D743BC400C7BCE9 /* Foundation.framework */,
+				3123101A1D743BB700C7BCE9 /* UIKit.framework */,
+				312310181D743B7B00C7BCE9 /* QuartzCore.framework */,
+				312310161D743B7300C7BCE9 /* CoreText.framework */,
 				315764A41D65998C00BA1B19 /* TencentOpenApi_IOS_Bundle.bundle */,
 				315764A51D65998C00BA1B19 /* TencentOpenAPI.framework */,
 				317C1E431D618E4B00921909 /* WebKit.framework */,
@@ -503,6 +559,7 @@
 				31BA27DE1CE9B5CA00E13B20 /* Images.xcassets in Resources */,
 				313D78F31D0E53B400FEAA3D /* cross.png in Resources */,
 				31BB852A1CE9BF2F00DC3AB3 /* Default-568h@2x.png in Resources */,
+				312310151D743B3E00C7BCE9 /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -633,10 +690,12 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",
+					"-force_load",
+					/Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/SDK/libWeiboSDK/libWeiboSDK.a,
 					"-lxml2",
 				);
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -644,7 +703,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -684,18 +743,20 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",
+					"-force_load",
+					/Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/SDK/libWeiboSDK/libWeiboSDK.a,
 					"-lxml2",
 				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
 		631FA98E1CE2334D008C31D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -712,23 +773,26 @@
 					/Users/zhengjuting/Downloads/OpenSDK1.7/Tencent,
 					"$(PROJECT_DIR)/QPAL/SDK/Wechat",
 					"$(PROJECT_DIR)/QPAL/SDK/QQ",
+					"$(PROJECT_DIR)/QPAL/SDK/libWeiboSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",
 					"-lxml2",
+					"-force_load",
+					/Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/SDK/libWeiboSDK/libWeiboSDK.a,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Kdc.SW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		631FA98F1CE2334D008C31D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -745,16 +809,19 @@
 					/Users/zhengjuting/Downloads/OpenSDK1.7/Tencent,
 					"$(PROJECT_DIR)/QPAL/SDK/Wechat",
 					"$(PROJECT_DIR)/QPAL/SDK/QQ",
+					"$(PROJECT_DIR)/QPAL/SDK/libWeiboSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-fobjc-arc",
 					"-lxml2",
+					"-force_load",
+					/Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/SDK/libWeiboSDK/libWeiboSDK.a,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Kdc.SW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

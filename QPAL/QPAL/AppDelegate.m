@@ -21,6 +21,8 @@
     //向微信注册
     [WXApi registerApp:WXPatient_App_ID withDescription:@"weixin"];
     _tencentOAuth = [[TencentOAuth alloc] initWithAppId:@"1105514703" andDelegate:self];
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:@"3863825920"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
@@ -32,17 +34,13 @@
     return YES;
 }
 
-/*
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    return [[Diplomat sharedInstance] handleOpenURL:url];
-}*/
-
 
 #pragma mark - WeChat
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [WXApi handleOpenURL:url delegate:self];
     [TencentOAuth HandleOpenURL:url];
+    [WeiboSDK handleOpenURL:url delegate:self];
+    
     return YES;
 }
 
@@ -129,6 +127,38 @@
         [defalts removeObjectForKey:@"unionid"];
     }
     
+}
+
+#pragma mark - Weibo
+
+-(void)didReceiveWeiboResponse:(WBBaseResponse *)response {
+    if ([response isKindOfClass:WBAuthorizeResponse.class]) {
+        if ((int)response.statusCode == 0) {
+            //NSLog(@"%@",response.userInfo);
+            NSDictionary *dic = @{@"userID":[(WBAuthorizeResponse *)response userID],
+                                  @"accessToken" :[(WBAuthorizeResponse *)response accessToken]};
+            [self getUserInfoWithDic:dic];
+        }
+        
+    }
+}
+
+- (void)getUserInfoWithDic:(NSDictionary *)dic
+{
+    NSError *error;
+    NSString *accessUrlStr = [NSString stringWithFormat:@"https://api.weibo.com/2/users/show.json?access_token=%@&uid=%@", [NSString stringWithFormat:@"%@",dic[@"accessToken"]], [NSString stringWithFormat:@"%@",dic[@"userID"]]];
+    NSURL *url = [NSURL URLWithString:accessUrlStr];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    NSDictionary *resDic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
+    //NSLog(@"%@",resDic);
+    
+    NSString *nickName = [resDic objectForKey:@"screen_name"];
+    NSString *headImgUrl = [resDic objectForKey:@"profile_image_url"];
+    NSString *uid = [resDic objectForKey:@"idstr"];
+    
+    [self WXgetUserTokenWithNickName:nickName HeadImgUrl:headImgUrl Code:uid ];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
