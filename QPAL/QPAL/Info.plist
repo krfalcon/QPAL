@@ -58,8 +58,14 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqapi</string>
+        <string>mqqapiwallet</string>
 		<string>mqq</string>
+        <string>mqqwpa</string>
+        <string>mqqbrowser</string>
+        <string>mttbrowser</string>
 		<string>mqqOpensdkSSoLogin</string>
+        <string>mqqopensdkapiV2</string>
+        <string>mqqopensdkapiV3</string>
 		<string>mqqconnect</string>
 		<string>mqqopensdkdataline</string>
 		<string>mqqopensdkgrouptribeshare</string>
@@ -75,6 +81,7 @@
 		<string>mqzonev2</string>
 		<string>mqzoneshare</string>
 		<string>wtloginqzone</string>
+        <string>wtloginmqq2</string>
 		<string>mqzonewx</string>
 		<string>mqzoneopensdkapiV2</string>
 		<string>mqzoneopensdkapi19</string>
@@ -86,6 +93,8 @@
         <string>sinaweibosso</string>
         <string>weibosdk</string>
         <string>weibosdk2.5</string>
+        <string>tencentapi.qq.reqContent</string>
+        <string>tencentapi.qzone.reqContent</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

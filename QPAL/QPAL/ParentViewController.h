@@ -20,11 +20,18 @@
 #import "NavigationView.h"
 #import "ZYShareView.h"
 #import "WXApi.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/TencentMessageObject.h>
+#import <TencentOpenAPI/TencentApiInterface.h>
+#import <TencentOpenAPI/QQApiInterfaceObject.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+
+#import "WeiboSDK.h"
 
 #import "CCActivityHUD.h"
 
 
-@interface ParentViewController : UIViewController<QPViewControllerDelegate,NavigationViewDelegate,GuestViewControllerDelegate,WeChatLoginViewControllerDelegate>
+@interface ParentViewController : UIViewController<QPViewControllerDelegate,NavigationViewDelegate,GuestViewControllerDelegate,WeChatLoginViewControllerDelegate,TencentSessionDelegate,WeiboSDKDelegate>
 {
     NavigationView          *navi;
     
