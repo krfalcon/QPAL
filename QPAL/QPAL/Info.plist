@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>消费总动员</string>
+	<string>坤鼎直播</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -29,7 +29,7 @@
 			<string>tencent</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx3d3e9e061ac56d63</string>
+				<string>wx4cdc7d4e664ae9ef</string>
 			</array>
 		</dict>
 		<dict>
@@ -58,14 +58,14 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqapi</string>
-        <string>mqqapiwallet</string>
+		<string>mqqapiwallet</string>
 		<string>mqq</string>
-        <string>mqqwpa</string>
-        <string>mqqbrowser</string>
-        <string>mttbrowser</string>
+		<string>mqqwpa</string>
+		<string>mqqbrowser</string>
+		<string>mttbrowser</string>
 		<string>mqqOpensdkSSoLogin</string>
-        <string>mqqopensdkapiV2</string>
-        <string>mqqopensdkapiV3</string>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqopensdkapiV3</string>
 		<string>mqqconnect</string>
 		<string>mqqopensdkdataline</string>
 		<string>mqqopensdkgrouptribeshare</string>
@@ -81,20 +81,20 @@
 		<string>mqzonev2</string>
 		<string>mqzoneshare</string>
 		<string>wtloginqzone</string>
-        <string>wtloginmqq2</string>
+		<string>wtloginmqq2</string>
 		<string>mqzonewx</string>
 		<string>mqzoneopensdkapiV2</string>
 		<string>mqzoneopensdkapi19</string>
 		<string>mqzoneopensdkapi</string>
 		<string>mqzoneopensdk</string>
 		<string>weixin</string>
-        <string>sinaweibohd</string>
-        <string>sinaweibo</string>
-        <string>sinaweibosso</string>
-        <string>weibosdk</string>
-        <string>weibosdk2.5</string>
-        <string>tencentapi.qq.reqContent</string>
-        <string>tencentapi.qzone.reqContent</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+		<string>sinaweibosso</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
+		<string>tencentapi.qq.reqContent</string>
+		<string>tencentapi.qzone.reqContent</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

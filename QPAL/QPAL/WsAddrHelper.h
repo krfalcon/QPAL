@@ -13,7 +13,7 @@
 #endif
 
 #define WX_BASE_URL               @"https://api.weixin.qq.com/sns"
-#define WXPatient_App_ID          @"wx3d3e9e061ac56d63"
-#define WXPatient_App_Secret      @"a9f938e0ac20ff4d6f0201afa85b95ca"
+#define WXPatient_App_ID          @"wx4cdc7d4e664ae9ef"
+#define WXPatient_App_Secret      @"43afc8c40c86448bc919e6e623bba29c"
 #define WXAddress                 @"http://sw.dgshare.cn"
 #define WXAPI                     @"http://qpal.dgshare.cn/crm/GetCustomerByUnionId?UnionId="

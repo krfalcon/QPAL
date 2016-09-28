@@ -782,7 +782,7 @@
 					"-force_load",
 					/Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/SDK/libWeiboSDK/libWeiboSDK.a,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Kdc.SW;
+				PRODUCT_BUNDLE_IDENTIFIER = Kdc.ZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -818,7 +818,7 @@
 					"-force_load",
 					/Users/zhengjuting/Documents/Krfalcon/demo/QPAL/QPAL/SDK/libWeiboSDK/libWeiboSDK.a,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Kdc.SW;
+				PRODUCT_BUNDLE_IDENTIFIER = Kdc.ZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
