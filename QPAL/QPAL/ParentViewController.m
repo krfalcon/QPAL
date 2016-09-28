@@ -13,6 +13,7 @@
 {
     GuestViewController             *guestViewController;
     WeChatLoginViewController       *weChatViewController;
+    ZBViewController                *zbViewController;
 }
 
 @end
@@ -30,11 +31,6 @@
     [viewControllerContainer setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
     [self.view addSubview:viewControllerContainer];
     
-    /*
-    navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:3 andTitle:@"登陆"];
-    [navi setDelegate:self];
-    [self.view addSubview:navi];
-    */
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *userToken = [defaults objectForKey:@"userToken"];
     
@@ -67,6 +63,7 @@
 
 - (void)pushViewControllerWithViewControllerType:(ViewControllerType)viewControllerType andToken:(NSString *)string
 {
+    
     navi = [[NavigationView alloc] initWithFrame:self.view.bounds andColor:3 andTitle:@""];
     [navi setDelegate:self];
     [self.view addSubview:navi];
@@ -74,18 +71,12 @@
     switch (viewControllerType) {
         case ViewControllerTypeGuest:
         {
-            NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-            for (NSHTTPCookie *cookie in [storage cookies]) {
-                [storage deleteCookie:cookie];
-            }
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            guestViewController = [[GuestViewController alloc] init];
-            [guestViewController setDelegate:self];
+            zbViewController = [[ZBViewController alloc] init];
+            //[zbViewController setDelegate:self];
             
             [navi createNextNavigationBarWithColor:ThemeBlack andTitle:@"" andIsIndex:NO];
             
-            nextViewController = guestViewController;
+            nextViewController = zbViewController;
             
             break;
         }

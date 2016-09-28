@@ -16,6 +16,7 @@
 #import "GuestViewController.h"
 #import "WeChatLoginViewController.h"
 #import "MapViewController.h"
+#import "ZBViewController.h"
 
 #import "NavigationView.h"
 #import "ZYShareView.h"

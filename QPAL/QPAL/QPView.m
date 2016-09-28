@@ -20,7 +20,7 @@
     [indexView addSubview:imageView];
 
     UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake(50 * self.scale, 400 * self.scale, 275 * self.scale, 50 * self.scale)];
-    [loginButton setTag:3];
+    [loginButton setTag:0];
     [loginButton setExclusiveTouch:YES];
     [loginButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
     [indexView addSubview:loginButton];
